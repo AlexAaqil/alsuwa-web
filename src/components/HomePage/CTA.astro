@@ -1,22 +1,145 @@
+---
+import { TimerIcon, Video } from "@lucide/astro";
+---
+
 <section class="CTA">
-    <div class="container-fluid-wrapper">
+    <div class="container-fluid">
         <div class="left">
-            <p>Tell Us What You're Trying to Build.</p>
+            <p class="title">Let's Build Something Great!</p>
+
+            <p class="description">We'll respond within 24 hours with an honest assessment, a rough scope, and a clear sense of whether we're the right team for you. No sales pitch. No obligation.</p>
+
+            <div class="extras">
+                <div>
+                    <TimerIcon />
+                    <span>24 hour response</span>
+                </div>
+                <div>
+                    <Video />
+                    <span>Free discovery call</span>
+                </div>
+            </div>
         </div>
 
         <div class="right">
-            <p>We'll respond within 24 hours with an honest assessment, a rough scope, and a clear sense of whether we're the right team for you. No sales pitch. No obligation.</p>
+            <form id="contact-form">
+                <div class="inputs-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" placeholder="Jane Doe" />
+                </div>
 
-            <div class="actions">
-                <a href="mailto:info@alsuwa.com">Email Us Directly</a>
-                <a href="">WhatsApp Us</a>
-            </div>
+                <div class="inputs-group">
+                    <label for="budget">Budget Range (Ksh)</label>
+                    <select name="budget" id="budget">
+                        <option value="">Select your budget range</option>
+                        <option value="0-20k">0 - 20,000</option>
+                        <option value="20k-30k">20,000 - 30,000</option>
+                        <option value="30k-50k">30,000 - 50,000</option>
+                        <option value="50k-100k">50,000 - 100,000</option>
+                        <option value="100k-200k">100,000 - 200,000</option>
+                        <option value="200k+">200,000+</option>
+                        <option value="not-sure">Not sure</option>
+                    </select>
+                </div>
 
-            <div class="extras">
-                <span>Free discovery call</span>
-                <span>No commitment required</span>
-                <span>Response within 24 hours</span>
-            </div>
+                <div class="inputs-group">
+                    <label for="project-type">Project Type</label>
+                    <select name="project-type" id="project-type">
+                        <option value="">Select your project type</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="custom-software">Custom Software</option>
+                        <option value="ui-ux-design">UI/UX Design</option>
+                        <option value="mobile-app-development">Mobile App Development</option>
+                        <option value="api-integration">API Integration</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="inputs-group">
+                    <label for="description">Project Description</label>
+                    <textarea name="description" id="description" placeholder="Tell us about your project..." rows="3"></textarea>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn-primary form-submit">
+                        Send Message
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    let msg = document.getElementById('form-msg');
+    if (!msg) {
+      msg = document.createElement('div');
+      msg.id = 'form-msg';
+      msg.style.display = 'none';
+      msg.style.padding = '10px';
+      msg.style.marginTop = '10px';
+      msg.style.borderRadius = '5px';
+      form.appendChild(msg);
+    }
+    
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get values with proper type casting
+      const name = (document.getElementById('name') as HTMLInputElement)?.value || '';
+      const budget = (document.getElementById('budget') as HTMLSelectElement)?.value || '';
+      const projectType = (document.getElementById('project-type') as HTMLSelectElement)?.value || '';
+      const message = (document.getElementById('description') as HTMLTextAreaElement)?.value || '';
+      
+      if (!name) {
+        const msg = document.getElementById('form-msg');
+        if (msg) {
+          msg.textContent = 'Please fill in your name.';
+          (msg as HTMLDivElement).style.color = '#FF6B5B';
+          (msg as HTMLDivElement).style.display = 'block';
+          setTimeout(() => {
+            if (msg) (msg as HTMLDivElement).style.display = 'none';
+          }, 3000);
+        }
+        return;
+      }
+      
+      const phoneNumber = '254746055487';
+      const whatsappMessage = `*Hi! I'd like to make an Inquiry*\n\n*Name:* ${name}\n*Project Type:* ${projectType}\n*Budget Range:* ${budget}\n*Message:* ${message || 'No message provided'}`;
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      
+      const msg = document.getElementById('form-msg');
+      const btn = form.querySelector('.form-submit');
+      const originalBtnText = btn?.textContent || 'Send message';
+      
+      if (btn) {
+        (btn as HTMLButtonElement).textContent = 'Opening WhatsApp...';
+        (btn as HTMLButtonElement).disabled = true;
+      }
+      
+      window.open(whatsappURL, '_blank');
+      
+      setTimeout(() => {
+        if (msg) (msg as HTMLDivElement).style.display = 'block';
+        if (btn) {
+          (btn as HTMLButtonElement).textContent = 'Sent ✓';
+          (btn as HTMLButtonElement).style.background = '#6BE995';
+        }
+        (form as HTMLFormElement).reset();
+        
+        setTimeout(() => {
+          if (btn) {
+            (btn as HTMLButtonElement).textContent = originalBtnText;
+            (btn as HTMLButtonElement).style.background = '';
+            (btn as HTMLButtonElement).disabled = false;
+          }
+          if (msg) (msg as HTMLDivElement).style.display = 'none';
+        }, 3000);
+      }, 1000);
+    });
+  });
+</script>

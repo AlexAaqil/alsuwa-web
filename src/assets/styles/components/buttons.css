@@ -1,0 +1,33 @@
+a.btn,
+button.btn {
+    @apply py-4 px-8 rounded-sm font-medium;
+}
+
+.btn-primary {
+    @apply bg-accent text-accent-foreground;
+}
+
+.btn-outline {
+    @apply border border-accent text-accent;
+}
+
+.pills,
+.badges {
+    @apply flex flex-wrap gap-2;
+
+    span {
+        @apply border border-secondary-accent text-secondary-accent py-1 text-body-label-text;
+    }
+}
+
+.pills {
+    span {
+        @apply rounded-full px-4;
+    }
+}
+
+.badges {
+    span {
+        @apply rounded-sm px-2;
+    }
+}

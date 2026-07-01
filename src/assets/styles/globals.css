@@ -34,7 +34,7 @@ section {
         @apply mb-4;
 
         h2 {
-            @apply font-accent font-bold text-heading-text;
+            @apply font-accent font-bold text-l-text;
         }
     }
 }

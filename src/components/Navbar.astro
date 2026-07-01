@@ -17,6 +17,11 @@ import BrandWordMark from "./BrandWordMark.astro";
             <a href="/">Blog</a>
         </div>
 
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+
         <div class="burger-menu" id="burgerMenu">
             <span></span>
             <span></span>
@@ -68,4 +73,37 @@ import BrandWordMark from "./BrandWordMark.astro";
             closeMenu();
         }
     });
+
+
+
+    function initTheme() {
+        // Get theme from localStorage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.classList.add('dark');
+        } else {
+        document.documentElement.classList.remove('dark');
+        }
+    }
+
+    function toggleTheme() {
+        if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        }
+    }
+
+    // Initialize theme immediately to avoid flash
+    initTheme();
+
+    // Set up toggle button
+    const toggleButton = document.getElementById('theme-toggle');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', toggleTheme);
+    }
 </script>

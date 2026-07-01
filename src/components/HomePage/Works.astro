@@ -1,0 +1,42 @@
+---
+import { AppConfig } from "../../data/app.config";
+---
+
+<section class="Works">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2>Recent Work</h2>
+        </div>
+
+        <div class="content">
+            <div class="works-wrapper">
+                {AppConfig.works.map(work => (
+                    <div class="work">
+                        <div class="content">
+                            <p class="title">{work.name}</p>
+                            <p class="description">{work.description}</p>
+
+                            <div class="outcome">
+                                <p>Outcome: Increased user engagement by 20%</p>
+                            </div>
+
+                            <div class="badges">
+                                {work.tags.map(tag => (
+                                    <span>{tag}</span>
+                                ))}
+                            </div>
+
+                            <div class="actions">
+                                <a href={`https://${work.slug}.com`} target="_blank" class="inline-link">View live site</a>
+                            </div>
+                        </div>
+
+                        <div class="image">
+                            <img src={work.image.src} alt={work.name} />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

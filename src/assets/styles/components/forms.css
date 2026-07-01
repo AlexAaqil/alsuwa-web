@@ -1,0 +1,21 @@
+form {
+    @apply p-4 bg-highlight rounded-lg;
+
+    .inputs-group {
+        @apply grid gap-1 mb-4;
+
+        label {
+            @apply font-medium;
+        }
+
+        input,
+        select,
+        textarea {
+            @apply py-2 px-4 rounded-sm border border-border placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50;
+        }
+    }
+
+    button {
+        @apply py-2 px-4 rounded-sm;
+    }
+}

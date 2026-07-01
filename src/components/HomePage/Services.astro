@@ -1,3 +1,7 @@
+---
+import { AppConfig } from "../../data/app.config";
+---
+
 <section class="Services">
     <div class="container-fluid">
         <div class="section-header">
@@ -7,30 +11,28 @@
         <p class="section-header-desc">Every project starts with one question: what outcome are you actually trying to achieve? We build infrastructure that answers that - not software that ticks a feature list.</p>
 
         <div class="services-wrapper">
-            <div class="service">
-                <p>01. Web Development</p>
-                <p>Websites should be your conversion engines, not just look good on a portfolio.</p>
-            </div>
+            {AppConfig.services.map((service) => (
+                <div class="service">
+                    <div class="image-wrapper">
+                        <div class="image">
+                            <img src={service.image.src} alt={service.name} />
+                        </div>
+                    </div>
 
-            <div class="service">
-                <p>02. Custom Software</p>
-                <p>Ecommerce, management systems, dashboards and internal tools that hold up under real conditions.</p>
-            </div>
+                    <div class="content">
+                        <div class="info">
+                            <p>{service.label}. {service.name}</p>
+                            <p>{service.description}</p>
+                        </div>
 
-            <div class="service">
-                <p>03. Branding</p>
-                <p>Identity that holds up at scale and survives trends and redesigns. Naming, marks, typography, and the systems that govern them.</p>
-            </div>
-
-            <div class="service">
-                <p>04. Mobile Development</p>
-                <p>iOS and Android apps that feel native. No quality shortcuts.</p>
-            </div>
-
-            <div class="service">
-                <p>05. API Integrations</p>
-                <p>Custom APIs and third-party integrations to make your tools a single coherent workflow. No more manual handoffs that kill your team's time.</p>
-            </div>
+                        <div class="pills">
+                            {service.tags.map((tag, index) => (
+                                <span>{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
     </div>
 </section>
