@@ -1,5 +1,7 @@
 ---
+import { AppConfig } from '../../data/app.config';
 import { getRouteUrl } from '../../data/routes.config';
+import { Video } from "@lucide/astro";
 ---
 
 <section class="Hero">
@@ -12,7 +14,10 @@ import { getRouteUrl } from '../../data/routes.config';
             </div>
 
             <div class="hero-btns">
-                <a href={ getRouteUrl("contact-page") } class="btn btn-primary">Schedule a call</a>
+                <a href={AppConfig.whatsappScheduleCall} rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" class="btn btn-primary">
+                    <Video />
+                    <span>Schedule a call</span>
+                </a>
 
                 <a href={ getRouteUrl("contact-page") } class="btn btn-outline">Get in touch</a>
             </div>

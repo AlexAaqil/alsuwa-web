@@ -1,25 +1,52 @@
 nav {
-    @apply sticky top-0 bg-background z-100;
+    @apply sticky top-0 bg-background z-100 border-b border-border;
 
     .container-fluid {
         @apply flex justify-between items-center;
+        @apply lg:py-2;
 
         .branding {
             a {
-                @apply font-bold font-accent;
+                @apply font-bold font-accent flex gap-1;
+
+                img {
+                    @apply w-5 h-5;
+                }
             }
         }
 
         .nav-links {
             @apply hidden absolute top-full left-0 w-full bg-foreground text-background flex-col items-center gap-4 p-4;
-            @apply lg:static lg:flex lg:w-auto lg:flex-row lg:p-0 lg:bg-transparent;
+            @apply lg:static lg:flex lg:w-auto lg:flex-row lg:gap-8 lg:p-0 lg:bg-transparent;
 
             a {
-                @apply hover:opacity-70 transition-opacity lg:text-foreground;
+                @apply font-medium hover:text-accent transition-opacity lg:text-foreground;
             }
 
             &.active {
                 @apply flex;
+            }
+            
+            /* Extras styling - shows below links on mobile, inline on desktop */
+            .extras {
+                @apply flex flex-col items-center gap-4 w-full pt-4 border-t border-border/20;
+                @apply lg:flex-row lg:pt-0 lg:border-t-0 lg:w-auto lg:ml-4;
+                
+                .theme-toggle {
+                    @apply p-2;
+                    
+                    svg {
+                        @apply w-5 h-5 stroke-foreground;
+                    }
+                }
+                
+                .btn {
+                    @apply flex items-center gap-2 px-4 py-2 text-white rounded-sm;
+                    
+                    svg {
+                        @apply w-4 h-4;
+                    }
+                }
             }
         }
 

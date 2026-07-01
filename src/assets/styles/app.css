@@ -154,6 +154,19 @@ body {
     button {
         @apply cursor-pointer;
     }
+
+    .whats-app-cs-btn-wrapper {
+    @apply fixed bottom-4 right-4 z-1000;
+
+    .whatsapp-cs-btn {
+            @apply bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg w-14 h-14 flex items-center justify-center;
+            animation: pulse-whatsapp 2s infinite;
+
+            svg {
+                @apply w-8 h-8 fill-white;
+            }
+        }
+    }
 }
 
 @keyframes pulse-whatsapp {

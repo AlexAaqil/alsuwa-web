@@ -43,6 +43,7 @@ export const AppConfig = {
     email: "info@alsuwa.com",
     time: "Mon - Fri: 09:00 AM - 05:00 PM",
     phone: "+254 746 055 487",
+    whatsappScheduleCall: "https://wa.me/254746055487?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20%20call!",
     instagram: "https://instagram.com/alsuwa",
     linkedin: "https://linkedin.com/alsuwa",
     tiktok: "https://tiktok.com/alsuwa",

@@ -1,4 +1,6 @@
 ---
+import { SunMoon, Video } from "@lucide/astro";
+import { AppConfig } from "../data/app.config";
 import BrandWordMark from "./BrandWordMark.astro";
 ---
 
@@ -6,21 +8,30 @@ import BrandWordMark from "./BrandWordMark.astro";
     <div class="container-fluid">
         <div class="branding">
             <a href="/">
+                <img src={AppConfig.images.logos.alsuwaLogo.src} alt="Alsuwa Logo">
                 <BrandWordMark />
             </a>
         </div>
 
         <div class="nav-links" id="navLinks">
-            <a href="/">Shop</a>
+            <!-- <a href="/">Shop</a> -->
             <a href="/">About</a>
+            <a href="/">Services</a>
             <a href="/">Contact</a>
             <a href="/">Blog</a>
-        </div>
+            
+            <!-- Extras moved inside nav-links -->
+            <div class="extras">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                    <SunMoon />
+                </button>
 
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-            <span class="light-icon">☀️</span>
-            <span class="dark-icon">🌙</span>
-        </button>
+                <a href={AppConfig.whatsappScheduleCall} rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" class="btn btn-primary">
+                    <Video />
+                    <span>Schedule a call</span>
+                </a>
+            </div>
+        </div>
 
         <div class="burger-menu" id="burgerMenu">
             <span></span>

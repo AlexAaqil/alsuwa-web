@@ -35,6 +35,10 @@
 
                     a {
                         @apply inline-block;
+
+                        &.btn-primary {
+                            @apply flex items-center gap-1;
+                        }
                     }
                 }
             }
