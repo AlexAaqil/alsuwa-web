@@ -143,6 +143,10 @@
 
                     .image {
                         @apply w-full h-[30dvh] lg:h-[40dvh];
+
+                        img {
+                            @apply object-contain;
+                        }
                     }
                 }
             }
