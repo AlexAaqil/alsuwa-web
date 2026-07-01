@@ -1,0 +1,44 @@
+.container-fluid {
+    @apply py-4 px-[4%];
+}
+
+.image {
+    img {
+        @apply h-full w-full object-cover;
+    }
+}
+
+.whatsapp_customer_service_btn {
+    @apply fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg w-14 h-14 flex items-center justify-center z-50;
+    animation: pulse-whatsapp 2s infinite;
+
+    svg {
+        @apply w-8 h-8 fill-white;
+    }
+}
+
+.inline-link {
+    @apply text-secondary-accent;
+}
+
+section {
+    &:not(:last-of-type) {
+        @apply mb-15;
+    }
+
+    &:last-of-type {
+        @apply pb-15;
+    }
+
+    .section-header {
+        @apply mb-4;
+
+        h2 {
+            @apply font-accent font-bold text-heading-text;
+        }
+    }
+}
+
+@import './components/index';
+
+@import './pages/index';

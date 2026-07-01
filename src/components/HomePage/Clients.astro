@@ -1,0 +1,19 @@
+---
+import { AppConfig } from "../../data/app.config";
+---
+
+<section class="Clients">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2>Our Amazing Clients</h2>
+        </div>
+
+        <div class="clients-wrapper">
+            {AppConfig.clients.map((client) => (
+                <div class="client image">
+                    <img src={client.image.src} alt={client.name} loading="lazy">
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

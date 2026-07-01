@@ -1,0 +1,58 @@
+footer {
+    @apply bg-accent text-accent-foreground;
+    @apply border-t border-border;
+
+    .container-fluid {
+        .content {
+            @apply grid lg:grid-cols-4 gap-8 mb-4 py-4;
+
+            .branding {
+                @apply space-y-2;
+
+                .name {
+                    @apply font-bold font-accent;
+                }
+
+                .info {
+                    @apply grid gap-1;
+                    
+                    p {
+                        @apply flex items-center gap-2;
+
+                        svg {
+                            @apply w-5 h-5;
+                        }
+                    }
+                }
+            }
+
+            .quick-links,
+            .services,
+            .contacts {
+                h3 {
+                    @apply font-bold mb-2;
+                }
+            }
+
+            .links {
+                @apply grid gap-1;
+            }
+
+            .contacts {
+                @apply space-y-1;
+
+                .socials {
+                    @apply flex gap-8;
+                }
+            }
+        }
+
+        .copyrights {
+            @apply grid gap-1 lg:flex lg:justify-between border-t border-border pt-4;
+
+            .documents {
+                @apply space-x-2;
+            }
+        }
+    }
+}

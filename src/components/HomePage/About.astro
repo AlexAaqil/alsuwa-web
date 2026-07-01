@@ -1,0 +1,33 @@
+---
+import { AppConfig } from "../../data/app.config";
+import { ArrowRight } from '@lucide/astro';
+import BrandWordMark from "../BrandWordMark.astro";
+---
+
+<section class="About">
+    <div class="container-fluid">
+        <p><BrandWordMark /> has helped lauch over {AppConfig.stats.projects} projects which include company websites, ecommerce, MIS and brand strategies for both local and global brands. Every growth infrastructure we provide is crafted to be user friendly, seemless and functional. <a href="/about-alsuwa" class="inline-link">Learn more about us <ArrowRight /></a></p>
+
+        <div class="stats">
+            <div class="stat">
+                <span>{AppConfig.stats.years_of_experience }+</span>
+                <span>Years Experience</span>
+            </div>
+
+            <div class="stat">
+                <span>{AppConfig.stats.projects }+</span>
+                <span>Projects Shipped</span>
+            </div>
+
+            <div class="stat">
+                <span>{AppConfig.stats.client_satisfaction }</span>
+                <span>Client Satisfaction</span>
+            </div>
+
+            <div class="stat">
+                <span>{AppConfig.stats.client_ROI}</span>
+                <span>Avg. Client ROI</span>
+            </div>
+        </div>
+    </div>
+</section>

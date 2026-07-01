@@ -1,0 +1,60 @@
+nav {
+    @apply sticky top-0 bg-background z-100;
+
+    .container-fluid {
+        @apply flex justify-between items-center;
+
+        .branding {
+            a {
+                @apply font-bold font-accent;
+            }
+        }
+
+        .nav-links {
+            @apply hidden absolute top-full left-0 w-full bg-foreground text-background flex-col items-center gap-4 p-4;
+            @apply lg:static lg:flex lg:w-auto lg:flex-row lg:p-0 lg:bg-transparent;
+
+            a {
+                @apply hover:opacity-70 transition-opacity lg:text-foreground;
+            }
+
+            &.active {
+                @apply flex;
+            }
+        }
+
+        .burger-menu {
+            @apply grid gap-1 cursor-pointer relative w-6 h-5 lg:hidden;
+
+            span {
+                @apply w-full h-0.5 bg-foreground transition-all duration-300 absolute;
+
+                &:nth-child(1) {
+                    @apply top-0;
+                }
+
+                &:nth-child(2) {
+                    @apply top-1/2 -translate-y-1/2;
+                }
+
+                &:nth-child(3) {
+                    @apply bottom-0;
+                }
+            }
+
+            &.active {
+                span:nth-child(1) {
+                    @apply rotate-45 top-1/2 -translate-y-1/2;
+                }
+
+                span:nth-child(2) {
+                    @apply opacity-0;
+                }
+
+                span:nth-child(3) {
+                    @apply -rotate-45 top-1/2 -translate-y-1/2;
+                }
+            }
+        }
+    }
+}

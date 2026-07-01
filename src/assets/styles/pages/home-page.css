@@ -1,0 +1,149 @@
+.HomePage {
+    .section-header {
+        @apply text-center;
+    }
+
+    .section-header-desc {
+        @apply mb-4 lg:text-center lg:max-w-[50dvw] lg:mx-auto;
+    }
+
+    .Hero {
+        @apply h-[40dvh] lg:min-h-[70dvh] flex items-center justify-center;
+
+        .container-fluid {
+            .hero_text {
+                @apply md:text-center max-w-6xl mx-auto;
+
+                .content {
+                    @apply space-y-2;
+
+                    .punchline {
+                        @apply font-bold text-heading-text lg:text-l-text md:w-[50%] mx-auto;
+                        line-height: 1.03;
+                    }
+
+                    .description {
+                        @apply md:w-[60%] mx-auto;
+                    }
+                }
+
+                .stats {
+                    @apply grid grid-cols-2 md:flex md:flex-row gap-8 justify-center mt-8 md:mt-12;
+
+                    .stat {
+                        @apply text-center;
+
+                        span:first-of-type {
+                            @apply block text-3xl md:text-4xl font-bold text-foreground;
+                        }
+
+                        span:last-of-type {
+                            @apply text-muted-foreground;
+                        }
+                    }
+                }
+            }
+
+            .hero_btns {
+                @apply mt-12 flex gap-4 lg:gap-8 justify-center;
+
+                a {
+                    @apply py-4 px-8 rounded-sm font-medium;
+
+                    &:nth-of-type(1) {
+                        @apply bg-accent text-accent-foreground;
+                    }
+
+                    &:nth-of-type(2) {
+                        @apply border border-accent;
+                    }
+                }
+            }
+        }
+    }
+
+    .About {
+        .container-fluid {
+            @apply grid lg:grid-cols-2 gap-8;
+
+            p {
+                .inline-link {
+                    @apply inline-flex items-center gap-1;
+
+                    svg {
+                        @apply w-4 h-4;
+                    }
+                }
+            }
+
+            .stats {
+                @apply grid grid-cols-2 gap-8;
+
+                .stat {
+                    @apply grid gap-1;
+
+                    span {
+                        &:nth-of-type(1) {
+                            @apply text-heading-text font-bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Services {
+        .container-fluid {
+            .services-wrapper {
+                @apply grid lg:grid-cols-3 gap-8;
+
+                .service {
+                    @apply space-y-2 p-4;
+
+                    p {
+                        &:nth-of-type(1) {
+                            @apply font-bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Process {
+        .container-fluid {
+            .process-steps {
+                @apply grid lg:grid-cols-3 gap-8;
+
+                .step {
+                    @apply space-y-2 p-4;
+
+                    p {
+                        &:nth-of-type(1) {
+                            @apply font-bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Clients {
+        .container-fluid {
+            @apply lg:max-w-4xl lg:mx-auto lg:text-center;
+
+            .clients-wrapper {
+                @apply py-2;
+                @apply flex lg:justify-center gap-8 relative overflow-hidden;
+
+                .client {
+                    @apply w-20 h-20;
+
+                    img {
+                        @apply object-contain grayscale;
+                    }
+                }
+            }
+        }
+    }
+}
