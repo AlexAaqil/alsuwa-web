@@ -8,27 +8,35 @@
     }
 
     .Hero {
-        @apply h-[40dvh] lg:min-h-[90dvh] flex items-center justify-center;
+        @apply h-[40dvh] flex items-center justify-center;
+        @apply lg:min-h-[90dvh];
 
         .container-fluid {
-            .hero_text {
-                @apply md:text-center max-w-6xl mx-auto;
+            .hero-text {
+                @apply space-y-8;
+                @apply md:text-center md:max-w-6xl md:mx-auto;
 
                 .content {
                     @apply space-y-8;
 
                     .punchline {
-                        @apply font-accent font-bold text-heading-text lg:text-xl-text;
+                        @apply text-heading-text font-bold font-accent;
+                        @apply lg:text-xl-text;
                     }
 
                     .description {
-                        @apply md:w-[75%] mx-auto text-heading-text;
+                        @apply md:text-heading-text md:w-[75%] md:mx-auto;
                     }
                 }
-            }
 
-            .hero_btns {
-                @apply mt-12 flex gap-4 lg:gap-8 justify-center;
+                .hero-btns {
+                    @apply flex gap-4;
+                    @apply md:gap-8 md:justify-center;
+
+                    a {
+                        @apply inline-block;
+                    }
+                }
             }
         }
     }
@@ -36,7 +44,7 @@
     .About {
         .container-fluid {
             p {
-                @apply md:w-[75%] lg:mx-auto text-heading-text text-center;
+                @apply md:w-[75%] md:mx-auto md:text-heading-text md:text-center;
 
                 .inline-link {
                     @apply inline-flex items-center gap-1;
@@ -131,25 +139,6 @@
 
                     .image {
                         @apply w-full h-[30dvh] lg:h-[40dvh];
-                    }
-                }
-            }
-        }
-    }
-
-    .Clients {
-        .container-fluid {
-            @apply lg:max-w-4xl lg:mx-auto lg:text-center;
-
-            .clients-wrapper {
-                @apply py-2;
-                @apply flex lg:justify-center gap-8 relative overflow-hidden;
-
-                .client {
-                    @apply w-20 h-20;
-
-                    img {
-                        @apply object-contain grayscale;
                     }
                 }
             }
