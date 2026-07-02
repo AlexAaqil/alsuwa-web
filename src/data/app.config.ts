@@ -1,6 +1,4 @@
 import shea254Logo from '../assets/images/logos/shea254-logo.jpg';
-import simianSafarisLogo from '../assets/images/logos/simian-safaris-logo.svg';
-import twangizaMetalsLogo from '../assets/images/logos/twangiza-metals-group-logo.png';
 import alsuwaLogo from '../assets/images/logos/alsuwa-logo.svg';
 
 import webDevelopment from '../assets/images/services/web-development.webp';
@@ -62,8 +60,6 @@ export const AppConfig = {
         },
         logos: {
             shea254Logo,
-            simianSafarisLogo,
-            twangizaMetalsLogo,
             alsuwaLogo
         },
     },
@@ -168,14 +164,6 @@ export const AppConfig = {
         {
             name: 'shea254',
             image: shea254Logo,
-        },
-        {
-            name: 'Simian Safaris',
-            image: simianSafarisLogo,
-        },
-        {
-            name: 'Twangiza Metals',
-            image: twangizaMetalsLogo,
         },
         {
             name: 'Alsuwa',
