@@ -3,13 +3,13 @@ import simianSafarisLogo from '../assets/images/logos/simian-safaris-logo.svg';
 import twangizaMetalsLogo from '../assets/images/logos/twangiza-metals-group-logo.png';
 import alsuwaLogo from '../assets/images/logos/alsuwa-logo.svg';
 
-import webDevelopment from '../assets/images/services/web-development.png';
-import customSoftware from '../assets/images/services/custom-software.jpg';
-import visualDesign from '../assets/images/services/visual-design.jpg';
-import apiIntegration from '../assets/images/services/api-integration.jpg';
-import mobileAppDevelopment from '../assets/images/services/mobile-app-development.jpg';
+import webDevelopment from '../assets/images/services/web-development.webp';
+import customSoftware from '../assets/images/services/custom-software.webp';
+import visualDesign from '../assets/images/services/visual-design.webp';
+import apiIntegration from '../assets/images/services/api-integration.webp';
+import mobileAppDevelopment from '../assets/images/services/mobile-app-development.webp';
 
-import shea254DemoImage from '../assets/images/projects/shea254.png';
+import shea254DemoImage from '../assets/images/projects/shea254.webp';
 
 export interface Client {
     id: string;
