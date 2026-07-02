@@ -8,7 +8,7 @@
     }
 
     .Hero {
-        @apply h-[40dvh] flex items-center justify-center;
+        @apply flex items-center justify-center;
         @apply lg:min-h-[90dvh];
 
         .container-fluid {
@@ -30,14 +30,14 @@
                 }
 
                 .hero-btns {
-                    @apply flex gap-4;
-                    @apply md:gap-8 md:justify-center;
+                    @apply flex flex-col gap-4;
+                    @apply md:flex-row md:gap-8 md:justify-center;
 
                     a {
-                        @apply inline-block;
+                        @apply inline-block text-center;
 
                         &.btn-primary {
-                            @apply flex items-center gap-1;
+                            @apply flex items-center justify-center gap-1;
                         }
                     }
                 }
