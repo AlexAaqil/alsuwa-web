@@ -1,5 +1,10 @@
 import shea254Logo from '../assets/images/logos/shea254-logo.jpg';
 import alsuwaLogo from '../assets/images/logos/alsuwa-logo.svg';
+import youTubeLogo from '../assets/images/logos/youtube.svg';
+import faceBookLogo from '../assets/images/logos/facebook.svg';
+import instagramLogo from '../assets/images/logos/instagram.svg';
+import whatsAppLogo from '../assets/images/logos/whatsapp.svg';
+import tikTokLogo from '../assets/images/logos/tiktok.svg';
 
 import webDevelopment from '../assets/images/services/web-development.webp';
 import customSoftware from '../assets/images/services/custom-software.webp';
@@ -42,11 +47,10 @@ export const AppConfig = {
     time: "Mon - Fri: 09:00 AM - 05:00 PM",
     phone: "+254 745 744 261",
     whatsappScheduleCall: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20%20call!",
-    instagram: "https://instagram.com/alsuwa",
-    linkedin: "https://linkedin.com/alsuwa",
-    tiktok: "https://tiktok.com/alsuwa",
-    youtube: "https://youtube.com/alsuwa",
-    twitter: "https://x.com/alsuwa",
+    instagram: "https://instagram.com/alsuwahq",
+    facebook: "https://facebook.com/alsuwahq",
+    tiktok: "https://tiktok.com/alsuwahq",
+    youtube: "https://youtube.com/@alsuwahq",
 
     currentYear: new Date().getFullYear(),
 
@@ -60,7 +64,12 @@ export const AppConfig = {
         },
         logos: {
             shea254Logo,
-            alsuwaLogo
+            alsuwaLogo,
+            youTubeLogo,
+            instagramLogo,
+            faceBookLogo,
+            tikTokLogo,
+            whatsAppLogo,
         },
     },
 
