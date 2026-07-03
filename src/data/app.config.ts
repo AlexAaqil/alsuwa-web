@@ -48,8 +48,8 @@ export const AppConfig = {
     phone: "+254 745 744 261",
     whatsappScheduleCall: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20%20call!",
     instagram: "https://instagram.com/alsuwahq",
-    facebook: "https://facebook.com/alsuwahq",
-    tiktok: "https://tiktok.com/alsuwahq",
+    facebook: "https://www.facebook.com/people/Alsuwahq/61591579591758/",
+    tiktok: "https://www.tiktok.com/@alsuwahq",
     youtube: "https://youtube.com/@alsuwahq",
 
     currentYear: new Date().getFullYear(),

@@ -42,7 +42,13 @@ footer {
                 @apply space-y-1;
 
                 .socials {
-                    @apply flex gap-8;
+                    @apply flex items-center gap-8;
+
+                    a {
+                        img {
+                            @apply w-10;
+                        }
+                    }
                 }
             }
         }
