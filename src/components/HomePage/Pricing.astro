@@ -1,62 +1,72 @@
+---
+import { AppConfig } from "../../data/app.config";
+---
+
 <section class="Pricing">
     <div class="container-fluid">
         <div class="section-header">
-            <h2>Pricing</h2>
+            <h2>Flexible Pricing Models</h2>
         </div>
 
         <div class="content">
-            <p>No surprise invoices. No scope creep. Just honest pricing for the work you need.</p>
+            <p class="section-header-desc">No surprise invoices. No scope creep. Just honest pricing for the work you need.</p>
 
-            <div class="product-cards">
-                <div class="product">
-                    <p class="package">Starter</p>
-                    <p class="title">Custom/project</p>
-                    <p class="description">For startups and early-stage businesses who need a focused MVP built right.</p>
-
-                    <ul>
-                        <li>✓ Up to 5 core features</li>
-                        <li>✓ Web or mobile app (one platform)</li>
-                        <li>✓ UI/UX design included</li>
-                        <li>✓ 4–8 week delivery</li>
-                        <li>✓ 30 days post-launch support</li>
-                    </ul>
-
-                    <a href="">Get a Quote</a>
-                </div>
-
-                <div class="product">
-                    <p class="tagline">Most Popular</p>
-                    <p class="package">Growth</p>
-                    <p class="title">Custom/project</p>
-                    <p class="description">For businesses ready to scale with a complete, production-grade product.</p>
+            <div class="pricing-cards">
+                <div class="pricing">
+                    <p class="package">Essentials</p>
+                    <p class="price">
+                        <span>From</span>
+                        <span>Ksh. 25,000 <span>(one-time payment)</span></span>
+                    </p>
+                    <p class="description">Company website development</p>
 
                     <ul>
-                        <li>✓ Full product development</li>
-                        <li>✓ Web + mobile (both platforms)</li>
-                        <li>✓ API integrations & admin panel</li>
-                        <li>✓ Advanced UI/UX & branding</li>
-                        <li>✓ 90 days support & maintenance</li>
-                        <li>✓ Analytics dashboard included</li>
+                        <li><span>✓</span> 4 core pages (Home, about, services / products, contact)</li>
+                        <li><span>✓</span> Responsive Website</li>
+                        <li><span>✓</span> Hosting setup</li>
+                        <li><span>✓</span> 2 - 3 days delivery time</li>
+                        <li><span>✓</span> 30 days free post-launch support</li>
                     </ul>
 
-                    <a href="">Start This Plan</a>
+                    <a href={AppConfig.whatsappScheduleCallEssentialsPackage} class="action">Schedule a call</a>
                 </div>
 
-                <div class="product">
+                <div class="pricing">
+                    <p class="package">Growth <span>Most Popular</span></p>
+                    <p class="price">
+                        <span>From</span>
+                        <span>Ksh. 35,000 <span>(one-time payment)</span></span>
+                    </p>
+                    <p class="description">Custom Software for businesses ready to scale.</p>
+
+                    <ul>
+                        <li><span>✓</span> MVPs, e-commerce, dashboard or management system</li>
+                        <li><span>✓</span> Hosting set up</li>
+                        <li><span>✓</span> Admin Panel with an analytics dashboard</li>
+                        <li><span>✓</span> 2 - 4 weeks delivery time</li>
+                        <li><span>✓</span> 30 days free post launch support</li>
+                    </ul>
+
+                    <a href={AppConfig.whatsappScheduleCallGrowthPackage} class="action">Schedule a call</a>
+                </div>
+
+                <div class="pricing">
                     <p class="package">Enterprise</p>
-                    <p class="title">Retainer/month</p>
-                    <p class="description">For established companies that need a dedicated technical partner long-term.</p>
+                    <p class="price">
+                        <span>From</span>
+                        <span>Ksh. 15,000 <span>/ month</span></span>
+                    </p>
+                    <p class="description">Monthly retainer fee for established companies in need of a dedicated technical partner long-term.</p>
 
                     <ul>
-                        <li>✓ Dedicated development team</li>
-                        <li>✓ Unlimited features & iterations</li>
-                        <li>✓ Priority response times</li>
-                        <li>✓ Architecture consulting</li>
-                        <li>✓ SLA guarantees</li>
-                        <li>✓ Monthly strategy reviews</li>
+                        <li><span>✓</span> Dedicated development team</li>
+                        <li><span>✓</span> Unlimited features & iterations</li>
+                        <li><span>✓</span> Priority response times</li>
+                        <li><span>✓</span> Architecture consulting</li>
+                        <li><span>✓</span> Monthly strategy reviews</li>
                     </ul>
 
-                    <a href="">Let's Talk</a>
+                    <a href={AppConfig.whatsappScheduleCallEnterprisePackage} class="action">Schedule a call</a>
                 </div>
             </div>
         </div>

@@ -153,6 +153,66 @@
         }
     }
 
+    .Pricing {
+        .container-fluid {
+            .content {
+                .pricing-cards {
+                    @apply grid lg:grid-cols-3 gap-8;
+
+                    .pricing {
+                        @apply p-4 bg-highlight rounded-lg space-y-4 flex flex-col;
+
+                        .package {
+                            @apply text-heading-text font-bold flex items-center gap-4;
+
+                            span {
+                                @apply text-body-label-text py-1 px-4 border border-secondary-accent text-secondary-accent rounded-full;
+                            }
+                        }
+
+                        .price {
+                            @apply text-heading-text grid gap-0.5;
+
+                            span {
+                                &:nth-of-type(1) {
+                                    @apply text-body-label-text;
+                                }
+
+                                &:nth-of-type(2) {
+                                    @apply font-bold;
+                                }
+
+                                span {
+                                    @apply text-muted-foreground font-normal;
+                                }
+                            }
+                        }
+
+                        .title {
+                            @apply font-medium;
+                        }
+
+                        ul {
+                            @apply list-none ml-0 flex-1 space-y-1;
+
+                            li {
+                                @apply ml-0 flex items-baseline gap-1;
+
+                                span {
+                                    @apply text-accent text-body-label-text;
+                                }
+                            }
+                        }
+
+                        .action {
+                            @apply inline-block bg-accent text-accent-foreground py-4 text-center w-full rounded-sm;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .CTA {
         .container-fluid {
             @apply grid gap-8;
