@@ -105,7 +105,7 @@
                 @apply grid lg:grid-cols-3 gap-8;
 
                 .step {
-                    @apply space-y-2 p-4 bg-highlight rounded-lg;
+                    @apply space-y-2 p-4 border border-border rounded-lg;
 
                     p {
                         &:nth-of-type(1) {

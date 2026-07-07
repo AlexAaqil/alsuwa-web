@@ -1,0 +1,89 @@
+.AboutPage {
+    .section-header {
+        @apply lg:text-center;
+    }
+
+    .Hero {
+        @apply lg:min-h-[30dvh] border-b border-secondary-accent/10 py-8;
+
+        .container-fluid {
+            .page-header {
+                @apply space-y-4;
+
+                h1 {
+                    @apply text-heading-text lg:text-xl-text font-bold lg:text-center;
+                }
+
+                p {
+                    @apply lg:text-center lg:w-[55%] lg:mx-auto;
+                }
+            }
+        }
+    }
+
+    .Location {
+        .container-fluid {
+            .content {
+                .location-wrapper {
+                    @apply grid lg:grid-cols-12 gap-8 py-8 px-4 border border-border rounded-lg;
+
+                    .image {
+                        @apply h-75 lg:col-span-4;
+
+                        img {
+                            @apply rounded-lg object-center;
+                        }
+                    }
+
+                    .info {
+                        @apply lg:col-span-8 lg:grid lg:grid-cols-12 lg:gap-8;
+
+                        .address {
+                            @apply text-heading-text lg:col-span-4;
+                        }
+
+                        .location-details {
+                            @apply space-y-2 lg:col-span-8;
+
+                            p {
+                                @apply flex gap-2 items-center;
+
+                                svg {
+                                    @apply w-4 h-4;
+                                }
+                            }
+                        }
+
+                        .actions {
+                            @apply grid lg:grid-cols-2 lg:items-center gap-8 mt-8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .MissionVision {
+        .container-fluid {
+            .info {
+                @apply grid lg:grid-cols-2 gap-8;
+
+                .mv-card {
+                    @apply p-4 rounded-lg bg-highlight;
+
+                    p {
+                        @apply lg:text-center;
+
+                        &:nth-of-type(1) {
+                            @apply font-bold mb-4;
+                        }
+
+                        &:nth-of-type(2) {
+                            @apply lg:w-[75%] lg:mx-auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

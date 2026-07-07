@@ -1,1 +1,24 @@
+.BrandStats {
+    .container-fluid {
+        .stats {
+            @apply bg-highlight grid grid-cols-2 lg:grid-cols-4 gap-8;
+
+            .stat {
+                @apply grid gap-2 p-4 lg:text-center;
+
+                &:not(:last-of-type) {
+                    @apply lg:border-r lg:border-border;
+                }
+
+                span {
+                    &:nth-of-type(1) {
+                        @apply text-l-text font-bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @import './home-page';
+@import './about-page';

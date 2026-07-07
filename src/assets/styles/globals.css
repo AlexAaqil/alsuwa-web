@@ -22,10 +22,10 @@ section {
     }
 
     .section-header {
-        @apply mb-4;
+        @apply mb-4 lg:mb-8;
 
         h2 {
-            @apply font-accent font-bold text-l-text;
+            @apply font-accent font-bold text-heading-text lg:text-l-text;
         }
     }
 }

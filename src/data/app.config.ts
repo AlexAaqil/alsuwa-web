@@ -1,3 +1,5 @@
+import ruiiKiambu from '../assets/images/general/kiambu-ruii.webp';
+
 import shea254Logo from '../assets/images/logos/shea254-logo.jpg';
 import alsuwaLogo from '../assets/images/logos/alsuwa-logo.svg';
 import youTubeLogo from '../assets/images/logos/youtube.svg';
@@ -43,6 +45,7 @@ export const AppConfig = {
     brand_name: "Alsuwa",
     brand_tagline: "Business Growth Company",
     address: "Kiambu, Kenya",
+    exact_address: "Ruii, Kiambu, Kenya",
     email: "info@alsuwa.com",
     time: "Mon - Fri: 09:00 AM - 05:00 PM",
     phone: "+254 745 744 261",
@@ -74,12 +77,15 @@ export const AppConfig = {
             tikTokLogo,
             whatsAppLogo,
         },
+        general: {
+            ruiiKiambu
+        }
     },
 
     stats: {
-        projects: 30,
-        years_of_experience: 4,
-        client_satisfaction: '98%',
+        projects: '30+',
+        years_of_experience: '4+',
+        client_satisfaction: '99%',
         client_ROI: '3X',
     },
 

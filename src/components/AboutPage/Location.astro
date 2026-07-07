@@ -1,0 +1,45 @@
+---
+import { AppConfig } from "../../data/app.config";
+import { MapPin, Phone, Mail } from "@lucide/astro";
+---
+
+<section class="Location">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h2>Where We Make It Happen</h2>
+        </div>
+
+        <div class="content">
+            <div class="location-wrapper">
+                <div class="image">
+                    <img src={AppConfig.images.general.ruiiKiambu.src} alt="Image of Ruii, Kiambu">
+                </div>
+
+                <div class="info">
+                    <p class="address">Kiambu, Kenya.</p>
+
+                    <div class="location-details">
+                        <p>
+                            <span><MapPin /></span>
+                            <span>{AppConfig.exact_address}</span>
+                        </p>
+                        <p>
+                            <span><Phone /></span>
+                            <span>{AppConfig.phone}</span>
+                        </p>
+                        <p>
+                            <span><Mail /></span>
+                            <span>{AppConfig.email}</span>
+                        </p>
+
+                        <div class="actions">
+                            <a href="" class="btn btn-outline">View Map</a>
+                            <a href={AppConfig.whatsappScheduleCall} class="btn btn-outline">Get in touch</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
