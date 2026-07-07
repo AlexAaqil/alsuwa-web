@@ -113,9 +113,9 @@ export const AppConfig = {
             label: '04',
             name: 'API Integration',
             slug: 'api-integration',
-            description: 'Custom APIs and third-party integrations to make your tools a single  coherent workflow.',
+            description: 'Custom APIs and third-party integrations to seemlessly integrate with systems you rely on.',
             image: apiIntegration,
-            tags: ['Payment Gateways', 'Third-party APIs', 'Custom APIs'],
+            tags: ['Payment Gateways (STK Push, Paypal, Stripe)', 'Custom APIs'],
         },
     ],
 
