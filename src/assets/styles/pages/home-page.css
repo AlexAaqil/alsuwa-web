@@ -21,7 +21,7 @@
 
                     .punchline {
                         @apply text-heading-text font-bold font-accent;
-                        @apply lg:text-xl-text;
+                        @apply lg:text-l-text lg:leading-15;
                     }
 
                     .description {

@@ -43,7 +43,7 @@ export interface Works {
 
 export const AppConfig = {
     brand_name: "Alsuwa",
-    brand_tagline: "Business Growth Company",
+    brand_tagline: "Custom Software Development & Business Automation in Kenya",
     address: "Kiambu, Kenya",
     exact_address: "Ruii, Kiambu, Kenya",
     email: "info@alsuwa.com",
