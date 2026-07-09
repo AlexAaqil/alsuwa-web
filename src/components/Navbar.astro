@@ -2,6 +2,7 @@
 import { SunMoon, Video } from "@lucide/astro";
 import { AppConfig } from "../data/app.config";
 import BrandWordMark from "./BrandWordMark.astro";
+import { getRouteUrl } from "../data/routes.config";
 ---
 
 <nav id="navbar">
@@ -15,10 +16,11 @@ import BrandWordMark from "./BrandWordMark.astro";
 
         <div class="nav-links" id="navLinks">
             <!-- <a href="/">Shop</a> -->
-            <a href="/about">About</a>
-            <a href="/">Services</a>
-            <a href="/">Contact</a>
-            <a href="/">Blog</a>
+            <a href={getRouteUrl('services-page')}>Services</a>
+            <a href={getRouteUrl('projects-page')}>Work</a>
+            <a href={getRouteUrl('blogs-page')}>Blog</a>
+            <a href={getRouteUrl('about-page')}>About</a>
+            <a href={getRouteUrl('contact-page')}>Contact</a>
             
             <!-- Extras moved inside nav-links -->
             <div class="extras">

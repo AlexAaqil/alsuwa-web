@@ -1,10 +1,12 @@
 export const routes = {
     "home-page": "/",
     "about-page": "/about",
-    "services-page": "/services",
-    "contact-page": "/contact",
-    "privacy-policy": "/privacy",
-    "terms-and-conditions": "/terms",
+    "services-page": "#",
+    "projects-page": "#",
+    "contact-page": "#",
+    "blogs-page": "#",
+    "privacy-policy": "#",
+    "terms-and-conditions": "#",
 } as const;
 
 export type RouteKey = keyof typeof routes;

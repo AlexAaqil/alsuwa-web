@@ -2,10 +2,11 @@
 import { AppConfig } from "../../data/app.config";
 import { ArrowRight } from '@lucide/astro';
 import BrandWordMark from "../BrandWordMark.astro";
+import { getRouteUrl } from "../../data/routes.config";
 ---
 
 <section class="About">
     <div class="container-fluid">
-        <p><BrandWordMark /> has helped lauch over {AppConfig.stats.projects} projects which include company websites, ecommerce, MIS and brand strategies for both local and global brands. Every growth infrastructure we provide is crafted to be user friendly, seemless and functional. <a href="/about-alsuwa" class="inline-link">Learn more about us <ArrowRight /></a></p>
+        <p><BrandWordMark /> has helped lauch over {AppConfig.stats.projects} projects which include company websites, ecommerce, MIS and brand strategies for both local and global brands. Every growth infrastructure we provide is crafted to be user friendly, seemless and functional. <a href={getRouteUrl('about-page')} class="inline-link">Learn more about us <ArrowRight /></a></p>
     </div>
 </section>
