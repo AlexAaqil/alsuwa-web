@@ -26,18 +26,18 @@ const schemaData = JSON.stringify({
 <Layout>
 	<Fragment slot="head">
 		<title>{AppConfig.brand_name} | {AppConfig.brand_tagline}</title>
-		<meta name="description" content="Alsuwa helps businesses grow through custom software development, website development, ERP Systems, e-commerce platforms, business automation solutions and visual design in Kenya." />
+		<meta name="description" content={AppConfig.social_sharing_tagline} />
 
 		<!-- Open Graph tags for social sharing -->
 		<meta property="og:title" content={`${AppConfig.brand_name} | ${AppConfig.brand_tagline}`} />
-		<meta property="og:description" content="Alsuwa helps businesses grow through custom software development, website development, ERP Systems, e-commerce platforms, business automation solutions and visual design in Kenya." />
+		<meta property="og:description" content={AppConfig.social_sharing_tagline} />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content={AppConfig.images.logos.alsuwaLogo.src} />
 		
 		<!-- Twitter Card tags -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={AppConfig.brand_name} />
-		<meta name="twitter:description" content="Alsuwa helps businesses grow through custom software development, website development, ERP Systems, e-commerce platforms, business automation solutions and visual design in Kenya." />
+		<meta name="twitter:description" content={AppConfig.social_sharing_tagline} />
 		<meta name="twitter:image" content={AppConfig.images.logos.alsuwaLogo.src} />
 		
 		<!-- Canonical URL -->

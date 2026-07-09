@@ -30,14 +30,14 @@ const schemaData = JSON.stringify({
 
 		<!-- Open Graph tags for social sharing -->
 		<meta property="og:title" content={`${AppConfig.brand_name} | ${AppConfig.brand_tagline}`} />
-		<meta property="og:description" content="Alsuwa is a business growth company specializing in helping ambitious businesses gain more: customers, sales, efficiency and profits by combining strategy, visual design and custom software development into solutions that help you grow smartly." />
+		<meta property="og:description" content={AppConfig.social_sharing_tagline} />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content={AppConfig.images.logos.alsuwaLogo.src} />
 		
 		<!-- Twitter Card tags -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={AppConfig.brand_name} />
-		<meta name="twitter:description" content="Alsuwa is a business growth company specializing in helping ambitious businesses gain more: customers, sales, efficiency and profits by combining strategy, visual design and custom software development into solutions that help you grow smartly." />
+		<meta name="twitter:description" content={AppConfig.social_sharing_tagline} />
 		<meta name="twitter:image" content={AppConfig.images.logos.alsuwaLogo.src} />
 		
 		<!-- Canonical URL -->
