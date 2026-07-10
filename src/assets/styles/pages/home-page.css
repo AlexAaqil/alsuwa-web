@@ -1,12 +1,4 @@
 .HomePage {
-    .section-header {
-        @apply text-center;
-    }
-
-    .section-header-desc {
-        @apply mb-8 lg:text-center lg:max-w-[50dvw] lg:mx-auto;
-    }
-
     .Hero {
         @apply flex items-center justify-center;
         @apply lg:min-h-[90dvh];
@@ -55,44 +47,6 @@
 
                     svg {
                         @apply w-4 h-4;
-                    }
-                }
-            }
-        }
-    }
-
-    .Services {
-        .container-fluid {
-            .services-wrapper {
-                @apply grid lg:grid-cols-2 gap-8;
-
-                .service {
-                    @apply space-y-2 p-2 bg-highlight rounded-lg;
-
-                    .image-wrapper {
-                        @apply w-full h-[30dvh] lg:h-[40dvh] relative bg-dark-accent p-2 rounded-lg;
-
-                        .image {
-                            @apply w-full h-full rounded-lg;
-
-                            img {
-                                @apply rounded-lg;
-                            }
-                        }
-                    }
-
-                    .content {
-                        @apply p-4 space-y-4;
-
-                        .info {
-                            @apply space-y-2;
-                        }
-
-                        p {
-                            &:nth-of-type(1) {
-                                @apply font-bold;
-                            }
-                        }
                     }
                 }
             }
@@ -206,42 +160,6 @@
 
                         .action {
                             @apply inline-block bg-accent text-accent-foreground py-4 text-center w-full rounded-sm;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .CTA {
-        .container-fluid {
-            @apply grid gap-8;
-            @apply lg:grid-cols-2;
-
-            .left {
-                @apply space-y-4;
-
-                .title {
-                    @apply font-accent font-bold text-l-text;
-                    line-height: 1.03;
-                }
-
-                .description {
-                    @apply lg:w-[90%];
-                }
-
-                .extras {
-                    @apply flex flex-wrap gap-8;
-
-                    div {
-                        @apply flex gap-1 items-center;
-
-                        svg {
-                            @apply w-4 h-4;
-                        }
-
-                        span {
-                            @apply text-body-label-text;
                         }
                     }
                 }

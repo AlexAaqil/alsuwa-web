@@ -20,5 +20,52 @@
     }
 }
 
+.HomePage .Services,
+.ServicesPage .Services {
+    .section-header {
+        @apply text-center;
+    }
+
+    .section-header-desc {
+        @apply mb-8 lg:text-center lg:max-w-[50dvw] lg:mx-auto;
+    }
+    
+    .container-fluid {
+        .services-wrapper {
+            @apply grid lg:grid-cols-2 gap-8;
+
+            .service {
+                @apply space-y-2 p-2 bg-highlight rounded-lg;
+
+                .image-wrapper {
+                    @apply w-full h-[30dvh] lg:h-[40dvh] relative bg-dark-accent p-2 rounded-lg;
+
+                    .image {
+                        @apply w-full h-full rounded-lg;
+
+                        img {
+                            @apply rounded-lg;
+                        }
+                    }
+                }
+
+                .content {
+                    @apply p-4 space-y-4;
+
+                    .info {
+                        @apply space-y-2;
+                    }
+
+                    p {
+                        &:nth-of-type(1) {
+                            @apply font-bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @import './home-page';
 @import './about-page';

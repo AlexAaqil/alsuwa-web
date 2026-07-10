@@ -1,0 +1,43 @@
+---
+import { AppConfig } from "../../data/app.config";
+import CTA from '../HomePage/CTA.astro';
+---
+
+<main class="ServicesPage">
+    <section class="Services">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h2>What we do</h2>
+            </div>
+
+            <p class="section-header-desc">Every project starts with one question: what outcome are you actually trying to achieve? We build infrastructure that answers that - not software that ticks a feature list.</p>
+
+            <div class="services-wrapper">
+                {AppConfig.services.map((service) => (
+                    <div class="service">
+                        <div class="image-wrapper">
+                            <div class="image">
+                                <img src={service.image.src} alt={service.name} />
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <div class="info">
+                                <p>{service.label}. {service.name}</p>
+                                <p>{service.description}</p>
+                            </div>
+
+                            <div class="pills">
+                                {service.tags.map((tag, index) => (
+                                    <span>{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+</main>

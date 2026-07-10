@@ -3,20 +3,21 @@ import { TimerIcon, Video } from "@lucide/astro";
 ---
 
 <section class="CTA">
-    <div class="container-fluid">
-        <div class="left">
-            <p class="title">Let's Build Something Great!</p>
+    <div class="container-fluid grid gap-8 lg:grid-cols-2">
+        <div class="left space-y-4">
+            <p class="title font-accent font-bold text-l-text">Let's Build Something Great!</p>
 
-            <p class="description">We'll respond within 24 hours with an honest assessment, a rough scope, and a clear sense of whether we're the right team for you. No sales pitch. No obligation.</p>
+            <p class="description lg:w-[90%]">We'll respond within 24 hours with an honest assessment, a rough scope, and a clear sense of whether we're the right team for you. No sales pitch. No obligation.</p>
 
-            <div class="extras">
-                <div>
-                    <TimerIcon />
-                    <span>24 hour response</span>
+            <div class="extras flex flex-wrap gap-8">
+                <div class="flex gap-1 items-center">
+                    <TimerIcon class="w-4 h-4" />
+                    <span class="text-body-label-text">24 hour response</span>
                 </div>
-                <div>
-                    <Video />
-                    <span>Free discovery call</span>
+
+                <div class="flex gap-1 items-center">
+                    <Video class="w-4 h-4" />
+                    <span class="text-body-label-text">Free discovery call</span>
                 </div>
             </div>
         </div>
@@ -69,6 +70,12 @@ import { TimerIcon, Video } from "@lucide/astro";
         </div>
     </div>
 </section>
+
+<style>
+  .title {
+    line-height: 1.03;
+  }
+</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
