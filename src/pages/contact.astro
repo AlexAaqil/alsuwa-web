@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactPage from '../components/ContactPage/Index.astro';
+import { AppConfig } from '../data/app.config';
+
+// JSON-LD object
+const schemaData = JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": AppConfig.brand_name,
+	"url": "https://alsuwa.com",
+	"sameAs": [
+		AppConfig.tiktok,
+		AppConfig.facebook,
+		AppConfig.instagram,
+		AppConfig.youtube,
+	],
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Kiambu",
+		"addressCountry": "KE"
+	}
+});
+---
+
+<Layout>
+	<Fragment slot="head">
+		<title>Contact {AppConfig.brand_name} | {AppConfig.brand_tagline}</title>
+		<meta name="description" content="We'd love to help. Fill out the contact form to request a callback from us." />
+
+		<!-- Open Graph tags for social sharing -->
+		<meta property="og:title" content={`${AppConfig.brand_name} | ${AppConfig.brand_tagline}`} />
+		<meta property="og:description" content={AppConfig.social_sharing_tagline} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content={AppConfig.images.logos.alsuwaLogo.src} />
+		
+		<!-- Twitter Card tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={AppConfig.brand_name} />
+		<meta name="twitter:description" content={AppConfig.social_sharing_tagline} />
+		<meta name="twitter:image" content={AppConfig.images.logos.alsuwaLogo.src} />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://alsuwa.com" />
+		
+		<!-- Robots meta tag -->
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+		<!-- set:html to inject the stringified JSON safely -->
+		<script type="application/ld+json" set:html={schemaData}></script>
+	</Fragment>
+
+	<ContactPage />
+</Layout>
