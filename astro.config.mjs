@@ -18,9 +18,6 @@ export default defineConfig({
         }
     },
     site: 'https://alsuwa.com',
-    trailingSlash: 'never',
-    build: {
-        format: 'file'
-    },
+    trailingSlash: 'always',
     integrations: [sitemap()],
 });
