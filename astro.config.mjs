@@ -7,6 +7,15 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
+        resolve: {
+            alias: {
+                '@': '/src',
+                '@/components': '/src/components',
+                '@/layouts': '/src/layouts',
+                '@/utils': '/src/utils',
+                '@/data': '/src/data',
+            }
+        }
     },
     site: 'https://alsuwa.com',  // Required for sitemap
     integrations: [sitemap()],

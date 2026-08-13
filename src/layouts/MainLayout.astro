@@ -7,6 +7,8 @@ import Footer from '../components/Footer.astro';
 const hasHead = !!Astro.slots.head;
 
 const canonicalUrl = new URL(Astro.url.pathname, 'https://alsuwa.com').href;
+
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,6 +24,9 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://alsuwa.com').href;
 		<meta name="generator" content={Astro.generator} />
 
 		<link rel="canonical" href={canonicalUrl} />
+
+		<title>{title}</title>
+  		<meta name="description" content={description} />
 
 		{
 			hasHead

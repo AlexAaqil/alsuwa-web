@@ -1,0 +1,189 @@
+---
+import { AppConfig } from "@/data/app.config";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceHeroWrapper from "@/components/ui/services/ServiceHeroWrapper.astro";
+import ServiceHeading from "@/components/ui/services/ServiceHeading.astro";
+import ServiceParagraph from "@/components/ui/services/ServiceParagraph.astro";
+import ServiceActionButton from "@/components/ui/services/ServiceActionButton.astro";
+import FeaturesList from "@/components/ui/FeaturesList.astro";
+import FeaturesListItem from "@/components/ui/FeaturesListItem.astro";
+import CTA from "@/components/CTA.astro";
+
+const servicesFeatures = {
+    technicalSEO: [
+        'Website performance optimization',
+        'Site structure improvements',
+        'Mobile optimization',
+        'XML sitemap creation',
+        'Crawl error fixing'
+    ],
+    onPageSEO: [
+        'Keyword research & analysis',
+        'Content optimization',
+        'Meta tags optimization',
+        'Internal linking strategy',
+        'URL structure optimization'
+    ],
+    offPageSEO: [
+        'Quality link building',
+        'Brand mentions & citations',
+        'Social media optimization',
+        'Influencer outreach',
+        'Competitor backlink analysis'
+    ],
+};
+
+const faqs = [
+  {
+    id: 1,
+    question: "What is SEO and why is it important?",
+    answer: "Search Engine Optimization (SEO) is the practice of optimizing your website to increase its visibility in organic search engine results. It's important because higher visibility leads to more traffic, better brand recognition, and increased opportunities for conversions and revenue."
+  },
+  {
+    id: 2,
+    question: "How long does it take to see results from SEO?",
+    answer: "SEO is a long-term strategy that typically takes 3-6 months to start showing significant results. However, this timeline varies depending on factors such as your website's current status, competition in your industry, and the aggressiveness of your SEO strategy."
+  },
+  {
+    id: 3,
+    question: "What SEO strategies do you use?",
+    answer: "We use a comprehensive approach that includes technical SEO (improving site structure, speed, and mobile-friendliness), on-page SEO (optimizing content, meta tags, and internal linking), off-page SEO (building quality backlinks), and local SEO for businesses with physical locations."
+  },
+  {
+    id: 4,
+    question: "How do you measure SEO success?",
+    answer: "We track multiple metrics including organic traffic growth, keyword rankings, conversion rates, bounce rates, and return on investment (ROI). We provide regular reports that show progress across these key performance indicators."
+  },
+  {
+    id: 5,
+    question: "Do you guarantee first-page rankings?",
+    answer: "We don't guarantee specific rankings as search engines frequently update their algorithms and rankings can fluctuate. However, we do guarantee that we'll use industry best practices to significantly improve your website's visibility and organic traffic over time."
+  }
+];
+
+const processes = [
+  {
+    id: 1,
+    label: '01',
+    name: "Research & Analysis",
+    description: "We conduct in-depth research on your industry, competitors, target audience, and current website performance to develop a tailored SEO strategy.",
+  },
+  {
+    id: 2,
+    label: '02',
+    name: "On-Page Optimization",
+    description: "We optimize your website's content, structure, and technical elements to improve search engine visibility and user experience.",
+  },
+  {
+    id: 3,
+    label: '03',
+    name: "Off-Page Strategy",
+    description: "We build high-quality backlinks and establish your brand authority through content marketing and digital PR campaigns.",
+  },
+  {
+    id: 4,
+    label: '04',
+    name: "Monitoring & Refinement",
+    description: "We continuously monitor performance, analyze data, and refine our strategies to ensure long-term success and ROI.",
+  }
+];
+---
+
+<MainLayout 
+  title="SEO Services in Kenya | Rank Higher on Google | Alsuwa" 
+  description="Drive more organic traffic and improve your search rankings with our comprehensive SEO services. We help businesses increase their online visibility through strategic optimization."
+>
+    <section class="Hero">
+        <div class="container-fluid">
+            <ServiceHeroWrapper>
+                <div class="content space-y-4">
+                    <ServiceHeading title="Search Engine Optimization" />
+
+                    <ServiceParagraph description="Boost your online visibility and drive more organic traffic to your website with our comprehensive SEO services. We help businesses improve their search rankings through strategic optimization." />
+
+                    <ServiceActionButton href={AppConfig.whatsappScheduleCallSEOService} text="Get SEO Audit" />
+                </div>
+
+                <div class="relative">
+                    <div class="bg-green rounded-[45px] p-4 md:p-8 relative z-10">
+                    <img src={AppConfig.images.services.webDevelopment.src} alt="SEO Services" class="w-full h-auto rounded-[35px]" />
+                    </div>
+                    <div class="absolute top-8 left-8 right-8 bottom-8 bg-dark rounded-[45px] -z-10"></div>
+                </div>
+            </ServiceHeroWrapper>
+        </div>
+    </section>
+
+    <section class="Features">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">What Our SEO Services Include</h2>
+
+            <div class="features-wrapper grid lg:grid-cols-3 gap-12">
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Technical SEO</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.technicalSEO.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">On-Page SEO</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.onPageSEO.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Off-Page SEO</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.offPageSEO.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="Process" id="process">
+      <div class="container-fluid">
+        <h2 class="font-accent font-bold text-heading-text lg:text-l-text mb-4 lg:mb-8 text-center">Our SEO Process</h2>
+
+        <div class="content">
+            <div class="process-steps grid lg:grid-cols-4 gap-8">
+                {processes.map((process) => (
+                    <div class="step space-y-2 p-4 border border-border rounded-lg">
+                        <p class="font-bold text-muted-foreground">{process.label}</p>
+                        <p class="font-bold">{process.name}</p>
+                        <p>{process.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="FAQs">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="faqs-wrapper space-y-4 max-w-3xl mx-auto">
+                {faqs.map((faq) => (
+                    <div class="faq-item p-4">
+                        <h3 class="font-semibold text-lg">{faq.question}</h3>
+                        <p class="text-muted-foreground mt-2">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+    
+    <CTA />
+</MainLayout>

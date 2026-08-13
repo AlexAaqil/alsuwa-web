@@ -3,10 +3,6 @@ button.btn {
     @apply py-4 px-8 rounded-sm font-medium text-center;
 }
 
-a.btn {
-    @apply inline-block;
-}
-
 .btn-primary {
     @apply bg-accent text-accent-foreground;
 }

@@ -1,73 +1,59 @@
 ---
-import { AppConfig } from "../../data/app.config";
+import { AppConfig } from "@/data/app.config";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import { pricingPlans } from "@/data/pricing.config";
+import FeaturesList from "@/components/ui/FeaturesList.astro";
+import FeaturesListItem from "@/components/ui/FeaturesListItem.astro";
 ---
 
 <section class="Pricing">
     <div class="container-fluid">
-        <div class="section-header">
-            <h2>Flexible Pricing Models</h2>
-        </div>
+        <SectionTitle 
+            title="Flexible Pricing Models"
+            description="No surprise invoices. No scope creep. Just honest pricing for the work you need."
+        />
 
         <div class="content">
-            <p class="section-header-desc">No surprise invoices. No scope creep. Just honest pricing for the work you need.</p>
+            <div class="pricing-cards grid lg:grid-cols-3 gap-8">
+                {pricingPlans.map((plan) => (
+                    <div class="pricing p-4 bg-highlight rounded-lg space-y-4 flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <p class="package text-heading-text font-bold">
+                                {plan.name}
+                            </p>
+                            {plan.badge && (
+                                <span class="text-xs bg-accent text-accent-foreground px-3 py-1 rounded-full">
+                                    {plan.badge}
+                                </span>
+                            )}
+                        </div>
+                        
+                        <p class="price text-heading-text grid gap-0.5">
+                            <span class="text-body-label-text">From</span>
+                            <span class="font-bold flex items-baseline gap-1">
+                                {plan.starting_price} 
+                                <span class="text-body-label-text text-muted-foreground font-normal">
+                                    {plan.payment_model}
+                                </span>
+                            </span>
+                        </p>
+                        
+                        <p class="description">{plan.description}</p>
 
-            <div class="pricing-cards">
-                <div class="pricing">
-                    <p class="package">Essentials</p>
-                    <p class="price">
-                        <span>From</span>
-                        <span>Ksh. 25,000 <span>(one-time payment)</span></span>
-                    </p>
-                    <p class="description">Company website development</p>
+                        <FeaturesList class="flex-1">
+                            {plan.features.map((feature) => (
+                                <FeaturesListItem feature={feature} />
+                            ))}
+                        </FeaturesList>
 
-                    <ul>
-                        <li><span>✓</span> 4 core pages (Home, about, services / products, contact)</li>
-                        <li><span>✓</span> Responsive Website</li>
-                        <li><span>✓</span> Hosting setup</li>
-                        <li><span>✓</span> 2 - 3 days delivery time</li>
-                        <li><span>✓</span> 30 days free post-launch support</li>
-                    </ul>
-
-                    <a href={AppConfig.whatsappScheduleCallEssentialsPackage} class="action">Schedule a call</a>
-                </div>
-
-                <div class="pricing">
-                    <p class="package">Growth <span>Most Popular</span></p>
-                    <p class="price">
-                        <span>From</span>
-                        <span>Ksh. 35,000 <span>(one-time payment)</span></span>
-                    </p>
-                    <p class="description">Custom Software for businesses ready to scale.</p>
-
-                    <ul>
-                        <li><span>✓</span> MVPs, e-commerce, dashboard or management system</li>
-                        <li><span>✓</span> Hosting set up</li>
-                        <li><span>✓</span> Admin Panel with an analytics dashboard</li>
-                        <li><span>✓</span> 2 - 4 weeks delivery time</li>
-                        <li><span>✓</span> 30 days free post launch support</li>
-                    </ul>
-
-                    <a href={AppConfig.whatsappScheduleCallGrowthPackage} class="action">Schedule a call</a>
-                </div>
-
-                <div class="pricing">
-                    <p class="package">Enterprise</p>
-                    <p class="price">
-                        <span>From</span>
-                        <span>Ksh. 15,000 <span>/ month</span></span>
-                    </p>
-                    <p class="description">Monthly retainer fee for established companies in need of a dedicated technical partner long-term.</p>
-
-                    <ul>
-                        <li><span>✓</span> Dedicated development team</li>
-                        <li><span>✓</span> Unlimited features & iterations</li>
-                        <li><span>✓</span> Priority response times</li>
-                        <li><span>✓</span> Architecture consulting</li>
-                        <li><span>✓</span> Monthly strategy reviews</li>
-                    </ul>
-
-                    <a href={AppConfig.whatsappScheduleCallEnterprisePackage} class="action">Schedule a call</a>
-                </div>
+                        <a 
+                            href={plan.action.url} 
+                            class="action inline-block bg-accent text-accent-foreground py-4 text-center w-full rounded-sm hover:opacity-90 transition-opacity"
+                        >
+                            {plan.action.text}
+                        </a>
+                    </div>
+                ))}
             </div>
         </div>
     </div>

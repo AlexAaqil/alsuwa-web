@@ -1,51 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HomePage from '../components/HomePage/index.astro';
-import { AppConfig } from '../data/app.config';
-
-// JSON-LD object
-const schemaData = JSON.stringify({
-	"@context": "https://schema.org",
-	"@type": "Organization",
-	"name": AppConfig.brand_name,
-	"url": "https://alsuwa.com",
-	"sameAs": [
-		AppConfig.tiktok,
-		AppConfig.facebook,
-		AppConfig.instagram,
-		AppConfig.youtube,
-	],
-	"address": {
-		"@type": "PostalAddress",
-		"addressLocality": "Kiambu",
-		"addressCountry": "KE"
-	}
-});
+import {AppConfig} from '@/data/app.config';
+import MainLayout from '@/layouts/MainLayout.astro';
+import HomePage from '@/components/HomePage/Index.astro';
 ---
 
-<Layout>
-	<Fragment slot="head">
-		<title>{AppConfig.brand_name} | {AppConfig.brand_tagline}</title>
-		<meta name="description" content={AppConfig.social_sharing_tagline} />
-
-		<!-- Open Graph tags for social sharing -->
-		<meta property="og:title" content={`${AppConfig.brand_name} | ${AppConfig.brand_tagline}`} />
-		<meta property="og:description" content={AppConfig.social_sharing_tagline} />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content={AppConfig.images.logos.alsuwaLogo.src} />
-		
-		<!-- Twitter Card tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={AppConfig.brand_name} />
-		<meta name="twitter:description" content={AppConfig.social_sharing_tagline} />
-		<meta name="twitter:image" content={AppConfig.images.logos.alsuwaLogo.src} />
-		
-		<!-- Robots meta tag -->
-		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-
-		<!-- set:html to inject the stringified JSON safely -->
-		<script type="application/ld+json" set:html={schemaData}></script>
-	</Fragment>
-
+<MainLayout
+	title={`${AppConfig.brand_name} | ${AppConfig.brand_tagline}`}
+	description={AppConfig.social_sharing_tagline}
+>
 	<HomePage />
-</Layout>
+</MainLayout>

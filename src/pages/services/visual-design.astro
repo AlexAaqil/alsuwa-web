@@ -1,0 +1,180 @@
+---
+import { AppConfig } from "@/data/app.config";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceHeroWrapper from "@/components/ui/services/ServiceHeroWrapper.astro";
+import ServiceHeading from "@/components/ui/services/ServiceHeading.astro";
+import ServiceParagraph from "@/components/ui/services/ServiceParagraph.astro";
+import ServiceActionButton from "@/components/ui/services/ServiceActionButton.astro";
+import FeaturesList from "@/components/ui/FeaturesList.astro";
+import FeaturesListItem from "@/components/ui/FeaturesListItem.astro";
+import Process from "@/components/Process.astro";
+import CTA from "@/components/CTA.astro";
+
+const servicesFeatures = {
+    logoDesign: [
+        'Wordmark',
+        'Icon',
+    ],
+    brandIdentity: [
+        'Color palettes',
+        'Typography',
+        'Brand Presentation',
+        'Usage guidelines'
+    ],
+    Stationery: [
+        'Letterheads',
+        'Cards',
+        'Flyers'
+    ],
+};
+
+const faqs = [
+    {
+        question: "How many logo concepts do I get to choose from?",
+        answer: "You'll see multiple distinct directions before we refine any single one — you're never stuck picking between near-identical options."
+    },
+    {
+        question: "Can you design just a logo, or do I need a full brand identity package?",
+        answer: "Either. We take on standalone projects like a single logo or flyer, and full brand identity packages for businesses building or rebuilding their brand from the ground up."
+    },
+    {
+        question: "Do you also handle web and print design together?",
+        answer: "Yes — since we also build websites, we make sure your visual identity looks consistent across both your digital presence and printed materials."
+    },
+    {
+        question: "What files do I get at the end?",
+        answer: "All final assets, delivered print-ready and web-ready, plus editable source files so future updates don't require starting over."
+    },
+    {
+        question: "Can you design for an existing brand that just needs updated materials?",
+        answer: "Yes — we can work within an existing brand identity to produce new business cards, flyers, or presentations without needing a full rebrand."
+    }
+];
+
+const processes = [
+  {
+    name: "Discovery Call",
+    description: "Your business, your audience, and how you want to be perceived.",
+  },
+  {
+    name: "Concept Development",
+    description: "Multiple design directions presented, not just one option to accept or reject.",
+  },
+  {
+    name: "Refinement",
+    description: "We narrow in on the right direction and refine it based on your feedback.",
+  },
+  {
+    name: "Final Delivery",
+    description: "All files handed over in the formats you need, ready for web, print, or both.",
+  },
+  {
+    name: "Ongoing Design Support",
+    description: "Available on retainer for businesses that need a steady stream of design work — social posts, seasonal campaigns, new print materials — without hiring in-house."
+  }
+];
+---
+
+<MainLayout 
+  title="Visual Design & Brand Identity Services Kenya | Logos, Branding & Print | Alsuwa" 
+  description="Logo design, brand identity, business cards, flyers and brand presentations for Kenyan businesses. Design that looks good and actually drives engagement."
+>
+    <section class="Hero">
+        <div class="container-fluid">
+            <ServiceHeroWrapper>
+                <div class="content space-y-4">
+                    <ServiceHeading title="Visual Design" />
+
+                    <ServiceParagraph description="A brand people remember, on everything they see." />
+
+                    <ServiceParagraph description="Your logo, your business card, the flyer for your next promotion, the deck you send to investors — if they all look like they came from different companies, customers notice, even if they can't say why. We build visual identities that are consistent, intentional, and built to work everywhere your business shows up, online and off." />
+
+                    <ServiceActionButton href={AppConfig.whatsappScheduleCallVisualDesignService} text="Get a Visual Design" />
+                </div>
+
+                <div class="relative">
+                    <div class="bg-green rounded-[45px] p-4 md:p-8 relative z-10">
+                    <img src={AppConfig.images.services.visualDesign.src} alt="Visual Design Services" class="w-full h-auto rounded-[35px]" />
+                    </div>
+                    <div class="absolute top-8 left-8 right-8 bottom-8 bg-dark rounded-[45px] -z-10"></div>
+                </div>
+            </ServiceHeroWrapper>
+        </div>
+    </section>
+
+    <section class="Features">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">What We Design</h2>
+
+            <div class="features-wrapper grid lg:grid-cols-3 gap-12">
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Logo Design</p>
+                    <p class="description">Distinct, versatile mark that works at any size</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.logoDesign.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Brand Identity</p>
+                    <p class="description">So your brand looks consistent no matter who's designing what</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.brandIdentity.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Stationery</p>
+                    <p class="description">Everyday materials that reflect the brand properly</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.Stationery.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Process" id="process">
+      <div class="container-fluid">
+        <h2 class="font-accent font-bold text-heading-text lg:text-l-text mb-4 lg:mb-8 text-center">Our Process</h2>
+
+        <div class="content">
+            <div class="process-steps grid lg:grid-cols-3 gap-8">
+                {processes.map((process, index) => (
+                    <div class="step space-y-2 p-4 border border-border rounded-lg">
+                        <p class="font-bold text-muted-foreground">{String(index + 1).padStart(2, '0')}</p>
+                        <p class="font-bold">{process.name}</p>
+                        <p>{process.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="FAQs">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="faqs-wrapper space-y-4 max-w-3xl mx-auto">
+                {faqs.map((faq) => (
+                    <div class="faq-item p-4">
+                        <h3 class="font-semibold text-lg">{faq.question}</h3>
+                        <p class="text-muted-foreground mt-2">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+</MainLayout>

@@ -1,4 +1,5 @@
 import ruiiKiambu from '../assets/images/general/kiambu-ruii.webp';
+import image404 from '../assets/images/general/404.svg';
 
 import shea254Logo from '../assets/images/logos/shea254-logo.jpg';
 import alsuwaLogo from '../assets/images/logos/alsuwa-logo.svg';
@@ -51,6 +52,12 @@ export const AppConfig = {
     time: "Mon - Fri: 09:00 AM - 05:00 PM",
     phone: "+254 745 744 261",
     whatsappScheduleCall: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call!",
+    whatsappScheduleCallWebsiteDevelopmentService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20website%20development%20service!",
+    whatsappScheduleCallSEOService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20SEO%20service!",
+    whatsappScheduleCallCustomSoftwareService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20Custom%20Software%20service!",
+    whatsappScheduleCallAPIIntegrationService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20API%20Integration%20service!",
+    whatsappScheduleCallMobileAppService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20Mobile%20App%20service!",
+    whatsappScheduleCallVisualDesignService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20Visual%20Design%20service!",
     whatsappScheduleCallEssentialsPackage: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20essentials%20package!",
     whatsappScheduleCallGrowthPackage: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20growth%20package!",
     whatsappScheduleCallEnterprisePackage: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20enterprise%20package!",
@@ -79,7 +86,8 @@ export const AppConfig = {
             whatsAppLogo,
         },
         general: {
-            ruiiKiambu
+            ruiiKiambu,
+            image404,
         }
     },
 
@@ -92,40 +100,52 @@ export const AppConfig = {
 
     services: [
         {
-            id: 1,
-            label: '01',
             name: 'Web Development',
             slug: 'web-development',
             description: 'Websites should be your conversion engines, not just look good on a portfolio.',
             image: webDevelopment,
             tags: ['Web Development', 'Web Design', 'SEO'],
+            is_featured: true,
         },
         {
-            id: 2,
-            label: '02',
             name: 'Custom Software',
             slug: 'custom-software',
             description: 'Ecommerce, management systems, dashboards and internal tools that hold up under real conditions.',
             image: customSoftware,
             tags: ['Ecommerce', 'Dashboards', 'Management Systems'],
+            is_featured: true,
         },
         {
-            id: 3,
-            label: '03',
             name: 'Visual Design',
             slug: 'visual-design',
             description: 'Beautiful and functional designs that enhance user experience and drive engagement.',
             image: visualDesign,
             tags: ['Brand Identity', 'Brand Strategy', 'Brand Presentation'],
+            is_featured: true,
         },
         {
-            id: 4,
-            label: '04',
             name: 'API Integration',
             slug: 'api-integration',
             description: 'Custom APIs and third-party integrations to seemlessly integrate with systems you rely on.',
             image: apiIntegration,
             tags: ['Payment Gateways (STK Push, Paypal, Stripe)', 'Custom APIs'],
+            is_featured: true,
+        },
+        {
+            name: 'SEO',
+            slug: 'seo',
+            description: 'Boost your online visibility, improve search rankings and drive more organic traffic with our comprehensive SEO services.',
+            image: apiIntegration,
+            tags: ['Technical SEO', 'On-Page SEO', 'Off-Page SEO'],
+            is_featured: false,
+        },
+        {
+            name: 'Mobile App Development',
+            slug: 'mobile-app-development',
+            description: 'Custom mobile app development — iOS, Android and cross-platform apps.',
+            image: apiIntegration,
+            tags: ['Androind', 'iOS', 'Cross Platform'],
+            is_featured: false,
         },
     ],
 
@@ -173,7 +193,7 @@ export const AppConfig = {
             id: 1,
             name: 'Shea254',
             slug: 'shea254',
-            description: 'Full e-commerce platform for a natural beauty brand. Built with a product catalogue, cart, and checkout flow - designed to convert  browsing shoppers into customers.',
+            description: 'For a natural beauty brand, we implemented a full e-commerce platform that resulted in increased user engagement by 20% and increase in sales by 30%.',
             image: shea254DemoImage,
             tags: ['Company Website', 'Ecommerce'],
         }

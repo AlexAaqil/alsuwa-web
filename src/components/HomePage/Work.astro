@@ -1,24 +1,22 @@
 ---
-import { AppConfig } from "../../data/app.config";
+import { AppConfig } from "@/data/app.config";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
 ---
 
 <section class="Works">
     <div class="container-fluid">
-        <div class="section-header">
-            <h2>Recent Work</h2>
-        </div>
+        <SectionTitle 
+            title="Recent Work"
+            description="Explore real-life examples of our successfully working projects"
+        />
 
         <div class="content">
-            <div class="works-wrapper">
+            <div class="works-wrapper grid gap-8">
                 {AppConfig.works.map(work => (
-                    <div class="work">
-                        <div class="content">
-                            <p class="title">{work.name}</p>
+                    <div class="work grid lg:grid-cols-2 items-center gap-8 bg-highlight rounded-lg p-4">
+                        <div class="content space-y-4">
+                            <p class="title font-bold text-heading-text">{work.name}</p>
                             <p class="description">{work.description}</p>
-
-                            <div class="outcome">
-                                <p>Outcome: Increased user engagement by 20%</p>
-                            </div>
 
                             <div class="badges">
                                 {work.tags.map(tag => (
@@ -31,8 +29,8 @@ import { AppConfig } from "../../data/app.config";
                             </div>
                         </div>
 
-                        <div class="image">
-                            <img src={work.image.src} alt={work.name} />
+                        <div class="image w-full h-[30dvh] lg:h-[40dvh]">
+                            <img src={work.image.src} alt={work.name} class="h-full w-full object-contain" />
                         </div>
                     </div>
                 ))}

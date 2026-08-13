@@ -1,0 +1,180 @@
+---
+import { AppConfig } from "@/data/app.config";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceHeroWrapper from "@/components/ui/services/ServiceHeroWrapper.astro";
+import ServiceHeading from "@/components/ui/services/ServiceHeading.astro";
+import ServiceParagraph from "@/components/ui/services/ServiceParagraph.astro";
+import ServiceActionButton from "@/components/ui/services/ServiceActionButton.astro";
+import FeaturesList from "@/components/ui/FeaturesList.astro";
+import FeaturesListItem from "@/components/ui/FeaturesListItem.astro";
+import CTA from "@/components/CTA.astro";
+
+const servicesFeatures = {
+    paymentGateways: [
+        'M-Pesa STK Push',
+        'Paypal',
+        'Paystack',
+        'Stripe'
+    ],
+    smsAPIs: [
+        'Order confirmations',
+        'Appointment reminders',
+        'Customer notifications'
+    ],
+    customAPIs: [
+        'E-commerce APIs',
+        'Blog APIs',
+        'CRM APIs'
+    ],
+};
+
+const faqs = [
+    {
+        question: "Is M-Pesa STK Push integration complicated to set up?",
+        answer: "The technical build is straightforward once you have a registered Safaricom Daraja API account. We handle the setup, credentials, and testing end-to-end."
+    },
+    {
+        question: "Is eTims integration a legal requirement?",
+        answer: "KRA requires most VAT-registered businesses to issue electronic tax invoices through eTims. If you're not sure whether this applies to you, we can help you figure that out during the discovery call."
+    },
+    {
+        question: "Can you integrate an API that isn't listed here?",
+        answer: "Yes. If it has an API — or even if it doesn't and needs a custom-built connector — we can scope it."
+    },
+    {
+        question: "Do you build this into a new website, or add it to an existing one?",
+        answer: "Both. We regularly add payment and API integrations to existing websites, POS systems, and internal tools without a full rebuild."
+    },
+    {
+        question: "How long does an integration take?",
+        answer: "Simple integrations (like STK Push on an existing site) can take a few days. More complex, multi-system integrations are scoped individually based on the systems involved."
+    }
+];
+
+const processes = [
+  {
+    name: "Discovery Call",
+    description: "Which systems you're using, which you need connected, and any compliance requirements (like eTims)",
+  },
+  {
+    name: "Technical Scoping",
+    description: "We map out exactly what data needs to move where, and flag any provider-side requirements upfront (business registration, API approval, etc.).",
+  },
+  {
+    name: "Build & Sandbox Testing",
+    description: "Integration is built and tested in a safe environment before touching live transactions",
+  },
+  {
+    name: "Live Testing & Launch",
+    description: "Careful rollout with real transactions monitored closely.",
+  },
+  {
+    name: "Support",
+    description: "We stay on to handle edge cases that only show up under real usage."
+  }
+];
+---
+
+<MainLayout 
+  title="API Integration Services in Kenya | M-Pesa STK Push, Paypal | Alsuwa" 
+  description="Custom API integrations for Kenyan businesses — M-Pesa STK Push, Paypal, Stripe, SMS gateways and third-party systems. Built to work the first time."
+>
+    <section class="Hero">
+        <div class="container-fluid">
+            <ServiceHeroWrapper>
+                <div class="content space-y-4">
+                    <ServiceHeading title="API Integration" />
+
+                    <ServiceParagraph description="Your systems should talk to each other. Most don't." />
+
+                    <ServiceParagraph description="A website that can't accept M-Pesa. An accounting system that can't talk to KRA's eTims. An online store with no way to charge international cards. These aren't rare problems — they're the default state of most business software until someone wires the pieces together properly. That's what we do: connect the tools you already use, and the ones you're legally required to, into one system that actually works." />
+
+                    <ServiceActionButton href={AppConfig.whatsappScheduleCallAPIIntegrationService} text="Get Your Custom Software" />
+                </div>
+
+                <div class="relative">
+                    <div class="bg-green rounded-[45px] p-4 md:p-8 relative z-10">
+                    <img src={AppConfig.images.services.apiIntegration.src} alt="API Integration Services" class="w-full h-auto rounded-[35px]" />
+                    </div>
+                    <div class="absolute top-8 left-8 right-8 bottom-8 bg-dark rounded-[45px] -z-10"></div>
+                </div>
+            </ServiceHeroWrapper>
+        </div>
+    </section>
+
+    <section class="Features">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">Integrations We Build</h2>
+
+            <div class="features-wrapper grid lg:grid-cols-3 gap-12">
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Payment Gateways</p>
+                    <p class="description">Let customers pay directly from your website or app</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.paymentGateways.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">SMS APIs</p>
+                    <p class="description">Automated confirmations and  appointment reminders</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.smsAPIs.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Custom APIs</p>
+                    <p class="description">No existing API? We build one so your systems can exchange data securely</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.customAPIs.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Process" id="process">
+      <div class="container-fluid">
+        <h2 class="font-accent font-bold text-heading-text lg:text-l-text mb-4 lg:mb-8 text-center">Our Process</h2>
+
+        <div class="content">
+            <div class="process-steps grid lg:grid-cols-4 gap-8">
+                {processes.map((process, index) => (
+                    <div class="step space-y-2 p-4 border border-border rounded-lg">
+                        <p class="font-bold text-muted-foreground">{String(index + 1).padStart(2, '0')}</p>
+                        <p class="font-bold">{process.name}</p>
+                        <p>{process.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="FAQs">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="faqs-wrapper space-y-4 max-w-3xl mx-auto">
+                {faqs.map((faq) => (
+                    <div class="faq-item p-4">
+                        <h3 class="font-semibold text-lg">{faq.question}</h3>
+                        <p class="text-muted-foreground mt-2">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+</MainLayout>

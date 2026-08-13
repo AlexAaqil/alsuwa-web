@@ -1,0 +1,22 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import {AppConfig} from '@/data/app.config';
+---
+
+<MainLayout title="404">
+	<main class="space-y-20">
+        <div class="relative flex flex-col-reverse items-center justify-center md:flex-row" id="hero">
+            <div class="row items-center py-5 md:pb-20 md:pt-10">
+                <div class="justify-center flex py-5">
+                    <img src={AppConfig.images.general.image404.src} width="50%" alt="Hero"/>
+                </div>
+                <div class="text-center space-y-10">
+                    <h2 class="font-medium leading-none">Sorry, we couldn't find the page you were looking for</h2>
+                    <a class="px-8 py-4 bg-black hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex" rel="noopener noreferrer"  href="./">
+                        <span class="text-center font-normal leading-7">Go Back Home</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+	</main>
+</MainLayout>

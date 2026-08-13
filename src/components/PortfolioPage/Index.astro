@@ -1,0 +1,40 @@
+---
+import { AppConfig } from "@/data/app.config";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+---
+
+<section class="Works py-4">
+    <div class="container-fluid">
+        <SectionTitle 
+            title="Our Portfolio"
+            description="Explore real-life examples of our successfully working projects"
+        />
+
+        <div class="content">
+            <div class="works-wrapper grid gap-8">
+                {AppConfig.works.map(work => (
+                    <div class="work grid lg:grid-cols-2 items-center gap-8 bg-highlight rounded-lg p-4">
+                        <div class="content space-y-4">
+                            <p class="title font-bold text-heading-text">{work.name}</p>
+                            <p class="description">{work.description}</p>
+
+                            <div class="badges">
+                                {work.tags.map(tag => (
+                                    <span>{tag}</span>
+                                ))}
+                            </div>
+
+                            <div class="actions">
+                                <a href={`https://${work.slug}.com`} target="_blank" class="inline-link">View live site</a>
+                            </div>
+                        </div>
+
+                        <div class="image w-full h-[30dvh] lg:h-[40dvh]">
+                            <img src={work.image.src} alt={work.name} class="h-full w-full object-contain" />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

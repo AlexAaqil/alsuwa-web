@@ -1,0 +1,171 @@
+---
+import { AppConfig } from "@/data/app.config";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceHeroWrapper from "@/components/ui/services/ServiceHeroWrapper.astro";
+import ServiceHeading from "@/components/ui/services/ServiceHeading.astro";
+import ServiceParagraph from "@/components/ui/services/ServiceParagraph.astro";
+import ServiceActionButton from "@/components/ui/services/ServiceActionButton.astro";
+import FeaturesList from "@/components/ui/FeaturesList.astro";
+import FeaturesListItem from "@/components/ui/FeaturesListItem.astro";
+import Process from "@/components/Process.astro";
+import CTA from "@/components/CTA.astro";
+
+const servicesFeatures = {
+    companyWebsites: [
+        'Mobile responsive design',
+        'Fast load times',
+        'Semantic code structured for SEO',
+        'Domain and hosting setup',
+        'Basic on-page SEO',
+        'SSL/HTTPS basics configured',
+        '30 days free post-launch support'
+    ],
+    ecommerceStoreFronts: [
+        'Product catalogues',
+        'Cart and checkout flows',
+        'M-Pesa STK Push',
+        'Card Payments',
+        'Other payment gateways'
+    ],
+    landingPages: [
+        'Ads',
+        'Launches',
+        'Campaigns',
+        'Social media links'
+    ],
+    webApplications: [
+        'Portals',
+        'Booking Systems',
+        'Dashboards',
+    ]
+};
+
+const faqs = [
+    {
+        id: 'build-time',
+        question: "How long does it take to build a website?",
+        answer: "A standard business website takes 2–3 days once content and assets are ready. E-commerce sites or sites with custom features typically take 2–4 weeks."
+    },
+    {
+        id: 'hosting-domain',
+        question: "Do you handle hosting and domain registration?",
+        answer: "Yes. We set up hosting and can register or connect your domain as part of every package."
+    },
+    {
+        id: 'redesign-existing',
+        question: "Can you redesign my existing website instead of starting from scratch?",
+        answer: "Yes — we can rebuild on your existing domain and content without losing the SEO equity your current site has built up."
+    },
+    {
+        id: 'mobile-responsive',
+        question: "Will my website work well on mobile?",
+        answer: "Every website we build is mobile-first, since most of your traffic in Kenya is likely coming from phones, not desktops."
+    },
+    {
+        id: 'ongoing-support',
+        question: "Do you offer ongoing support after launch?",
+        answer: "Every project includes 30 days of free post-launch support. After that, we offer a monthly retainer for businesses that want a dedicated technical partner."
+    }
+];
+---
+
+<MainLayout 
+  title="Web development Services in Kenya | Alsuwa" 
+  description="Custom, high-converting websites built for Kenyan businesses. Responsive design, fast load times, SEO-ready structure and 30 days of free support. From Ksh. 25,000."
+>
+    <section class="Hero">
+        <div class="container-fluid">
+            <ServiceHeroWrapper>
+                <div class="content space-y-4">
+                    <ServiceHeading title="Web Development" />
+
+                    <ServiceParagraph description="Websites should be conversion engines, not digital business cards." />
+
+                    <ServiceParagraph description="Most business websites in Kenya are built once, launched, and forgotten — pretty on a laptop screen, useless on a phone, and invisible on Google. We build websites the opposite way: fast, mobile-first, structured for search, and designed around one question — what do you want a visitor to do once they land here?" />
+
+                    <ServiceParagraph description="Whether you need a company website, a landing page for a campaign, or a full e-commerce storefront, we build it to hold up under real traffic and real customers." />
+
+                    <ServiceActionButton href={AppConfig.whatsappScheduleCallWebsiteDevelopmentService} text="Get Your Website" />
+                </div>
+
+                <div class="relative">
+                    <div class="bg-green rounded-[45px] p-4 md:p-8 relative z-10">
+                    <img src={AppConfig.images.services.webDevelopment.src} alt="SEO Services" class="w-full h-auto rounded-[35px]" />
+                    </div>
+                    <div class="absolute top-8 left-8 right-8 bottom-8 bg-dark rounded-[45px] -z-10"></div>
+                </div>
+            </ServiceHeroWrapper>
+        </div>
+    </section>
+
+    <section class="Features">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">What We Build</h2>
+
+            <div class="features-wrapper grid lg:grid-cols-4 gap-12">
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Company & Business Websites</p>
+                    <p class="description">Websites that convert visitors into leads</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.companyWebsites.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Landing Pages</p>
+                    <p class="description">High conversion single pages</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.landingPages.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Web Applications</p>
+                    <p class="description">Apps that go beyond a static site</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.webApplications.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Ecommerce Storefronts</p>
+                    <p class="description">Websites that convert leads to sales</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.ecommerceStoreFronts.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Process />
+
+    <section class="FAQs">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="faqs-wrapper space-y-4 max-w-3xl mx-auto">
+                {faqs.map((faq) => (
+                    <div class="faq-item p-4">
+                        <h3 class="font-semibold text-lg">{faq.question}</h3>
+                        <p class="text-muted-foreground mt-2">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+</MainLayout>

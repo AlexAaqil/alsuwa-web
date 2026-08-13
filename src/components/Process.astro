@@ -1,0 +1,25 @@
+---
+import { AppConfig } from "@/data/app.config";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+---
+
+<section class="Process">
+    <div class="container-fluid">
+        <SectionTitle 
+            title="Our Working Process"
+            description="No vague timelines. No disappearing after kickoffs. No invoices for work you didn't agree to. Here's exactly how a project runs."
+        />
+
+        <div class="content">
+            <div class="process-steps grid lg:grid-cols-3 gap-8">
+                {AppConfig.processes.map((process) => (
+                    <div class="step space-y-2 p-4 border border-border rounded-lg">
+                        <p class="font-bold text-muted-foreground">{process.label}</p>
+                        <p class="font-bold">{process.name}</p>
+                        <p>{process.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,47 +1,48 @@
 ---
-import { AppConfig } from '../data/app.config';
-import { getRouteUrl } from '../data/routes.config';
-import BrandWordMark from './BrandWordMark.astro';
 import { Clock, MapPin, Mail } from '@lucide/astro';
+import { AppConfig } from '@/data/app.config';
+import { getRouteUrl } from '@/data/routes.config';
+import BrandWordMark from '@/components/BrandWordMark.astro';
 ---
 
-<footer>
+<footer class="border-t border-border">
   <div class="container-fluid">
-    <div class="content">
-      <div class="branding">
-        <p class="name"><BrandWordMark /></p>
+    <div class="content grid lg:grid-cols-4 gap-8 mb-4 py-4">
+      <div class="branding space-y-2">
+        <p class="name font-bold font-accent"><BrandWordMark /></p>
         <p class="tagline">{ AppConfig.brand_tagline }</p>
 
-        <div class="info">
-          <p>
-            <MapPin />
+        <div class="info grid gap-1">
+          <p class="flex items-center gap-2">
+            <MapPin class="w-5 h-5" />
             <span>{ AppConfig.address }</span>
           </p>
-          <p>
-            <Mail />
+          <p class="flex items-center gap-2">
+            <Mail class="w-5 h-5" />
             <span>{ AppConfig.email }</span>
           </p>
-          <p>
-            <Clock />
+          <p class="flex items-center gap-2">
+            <Clock class="w-5 h-5" />
             <span>{ AppConfig.time }</span>
           </p>
         </div>
       </div>
 
-      <div class="quick-links">
-        <h3>Quick Links</h3>
-        <div class="links">
+      <div class="quick-links lg:justify-self-center">
+        <h3 class="font-bold mb-2">Quick Links</h3>
+        <div class="links grid gap-1">
           <a href={getRouteUrl("home-page")}>Home</a>
           <a href={getRouteUrl("about-page")}>About</a>
           <a href={getRouteUrl("services-page")}>Services</a>
           <a href={getRouteUrl("about-page")}>Portfolio</a>
+          <a href={getRouteUrl("software-page")}>Software</a>
           <a href={getRouteUrl("contact-page")}>Contact</a>
         </div>
       </div>
 
-      <div class="services">
-        <h3>Services</h3>
-        <div class="links">
+      <div class="services lg:justify-self-center">
+        <h3 class="font-bold mb-2">Services</h3>
+        <div class="links grid gap-1">
           <a href="/services/custom-software">Custom software</a>
           <a href="/services/web-development">Web Development</a>
           <a href="/services/mobile-apps">Mobile Apps</a>
@@ -49,32 +50,32 @@ import { Clock, MapPin, Mail } from '@lucide/astro';
         </div>
       </div>
 
-      <div class="contacts">
-        <h3>Connect With Us</h3>
-        <div class="socials">
+      <div class="contacts space-y-1 lg:justify-self-center">
+        <h3 class="font-bold mb-2">Connect With Us</h3>
+        <div class="socials flex items-center gap-8">
           <a href={ AppConfig.instagram } aria-label="Instagram Link" target="_blank" rel="noopener noreferrer">
-            <img src={AppConfig.images.logos.instagramLogo.src} alt="Instagram Link">
+            <img src={AppConfig.images.logos.instagramLogo.src} alt="Instagram Link" class="w-8 h-8">
           </a>
 
           <a href={ AppConfig.facebook } aria-label="Facebook Link" target="_blank" rel="noopener noreferrer">
-            <img src={AppConfig.images.logos.faceBookLogo.src} alt="Facebook Link">
+            <img src={AppConfig.images.logos.faceBookLogo.src} alt="Facebook Link" class="w-8 h-8">
           </a>
 
           <a href={ AppConfig.tiktok } aria-label="TikTok Link" target="_blank" rel="noopener noreferrer">
-            <img src={AppConfig.images.logos.tikTokLogo.src} alt="TikTok Link">
+            <img src={AppConfig.images.logos.tikTokLogo.src} alt="TikTok Link" class="w-8 h-8">
           </a>
 
           <a href={ AppConfig.youtube } aria-label="YouTube Link" target="_blank" rel="noopener noreferrer">
-            <img src={AppConfig.images.logos.youTubeLogo.src} alt="YouTube Link">
+            <img src={AppConfig.images.logos.youTubeLogo.src} alt="YouTube Link" class="w-8 h-8">
           </a>
         </div>
         <p>Follow us for updates and insights</p>
       </div>
     </div>
 
-    <div class="copyrights">
+    <div class="copyrights grid gap-1 lg:flex lg:justify-between border-t border-border pt-4">
       <p class="text">&copy; {AppConfig.currentYear} <BrandWordMark />. All rights reserved.</p>
-      <div class="documents">
+      <div class="documents space-x-2">
         <a href={getRouteUrl("privacy-policy")}>Privacy Policy</a>
         <a href={getRouteUrl("terms-and-conditions")}>Terms of Service</a>
       </div>

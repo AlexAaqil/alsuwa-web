@@ -2,12 +2,6 @@
     @apply py-4 px-[4%];
 }
 
-.image {
-    img {
-        @apply h-full w-full object-cover;
-    }
-}
-
 .inline-link {
     @apply text-secondary-accent;
 }
@@ -20,16 +14,12 @@ section {
     &:last-of-type {
         @apply pb-15;
     }
-
-    .section-header {
-        @apply mb-4 lg:mb-8;
-
-        h2 {
-            @apply font-accent font-bold text-heading-text lg:text-l-text;
-        }
-    }
 }
 
 @import './components/index';
 
-@import './pages/index';
+/* *,
+*::before,
+*::after {
+    outline: 1px solid rgb(253, 233, 233);
+} */

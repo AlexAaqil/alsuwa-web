@@ -1,21 +1,15 @@
 ---
 import Hero from './Hero.astro';
-import About from './About.astro';
 import Services from './Services.astro';
-import Process from './Process.astro';
-import Works from './Works.astro';
-import CTA from './CTA.astro';
+import Work from './Work.astro';
 import Pricing from './Pricing.astro';
-// import Clients from './Clients.astro';
+import Process from '@/components/Process.astro';
+import CTA from '@/components/CTA.astro';
 ---
 
-<main class="HomePage">
-    <Hero />
-    <About />
-    <Services />
-    <Process />
-    <Works />
-    <Pricing />
-    <CTA />
-    <!-- <Clients /> -->
-</main>
+<Hero />
+<Services />
+<Process />
+<Work />
+<Pricing />
+<CTA />

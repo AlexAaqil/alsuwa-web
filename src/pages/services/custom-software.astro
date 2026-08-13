@@ -1,0 +1,204 @@
+---
+import { AppConfig } from "@/data/app.config";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceHeroWrapper from "@/components/ui/services/ServiceHeroWrapper.astro";
+import ServiceHeading from "@/components/ui/services/ServiceHeading.astro";
+import ServiceParagraph from "@/components/ui/services/ServiceParagraph.astro";
+import ServiceActionButton from "@/components/ui/services/ServiceActionButton.astro";
+import FeaturesList from "@/components/ui/FeaturesList.astro";
+import FeaturesListItem from "@/components/ui/FeaturesListItem.astro";
+import CTA from "@/components/CTA.astro";
+
+const servicesFeatures = {
+    ecommercePlatforms: [
+        'Full online store',
+        'Product catalogue',
+        'Cart and checkout flows',
+        'M-Pesa and card payments',
+        'Order management'
+    ],
+    posSystems: [
+        'In-Store POS',
+        'Multi-branch POS',
+        'Inventory tracking',
+        'Sales reporting',
+        'Invoicing'
+    ],
+    erpManagementSystems: [
+        'Inventory tracking',
+        'Staff management',
+        'Finance',
+        'Operations tracking'
+    ],
+    bookingSchedulingSystems: [
+        'Appointments',
+        'Reservations',
+        'Resource management',
+    ]
+};
+
+const faqs = [
+    {
+        question: "How is custom software different from buying an existing tool?",
+        answer: "Off-the-shelf tools are built for the average user. Custom software is built around your specific workflow, so you're not paying for features you don't need or working around limitations you didn't choose."
+    },
+    {
+        question: "Can you build a POS system that's compliant with KRA's eTims requirements?",
+        answer: "Yes — eTims integration is something we regularly build into POS and invoicing systems for Kenyan businesses."
+    },
+    {
+        question: "We already have a system that's outdated or broken. Can you rebuild it?",
+        answer: "Yes. We can rebuild existing systems, migrate your data, and improve on what's already there instead of starting from a blank slate."
+    },
+    {
+        question: "How long does a custom system take to build?",
+        answer: "Most projects take 2–4 weeks depending on scope. Larger ERPs or multi-module systems are scoped and timelined individually during the proposal stage."
+    },
+    {
+        question: "Do you provide training after launch?",
+        answer: "Yes — every project includes documentation and basic training so your team can use the system confidently from day one."
+    }
+];
+
+const processes = [
+  {
+    name: "Discovery Call",
+    description: 'A deep dive into your current process, where it breaks down, and what "solved" actually looks like.',
+  },
+  {
+    name: "Scoped Proposal",
+    description: "A clear document covering features, timeline, and pricing before any commitment.",
+  },
+  {
+    name: "Design Sprint",
+    description: " Clickable prototypes of the key screens, so you're approving the experience before we build it.",
+  },
+  {
+    name: "Agile Build Sprints",
+    description: "Weekly demos so you can see and steer progress the whole way through.",
+  },
+  {
+    name: "QA & Launch",
+    description: "Tested under real conditions — real data volumes, real edge cases — before going live."
+  },
+  {
+    name: "Growth & Support",
+    description: "Post-launch monitoring, fixes, and an optional retainer for ongoing feature development."
+  }
+];
+---
+
+<MainLayout 
+  title="Custom Software Development in Kenya | Ecommerce, POS & Business Systems | Alsuwa" 
+  description="Custom software development for Kenyan businesses — e-commerce platforms, POS systems, ERPs, management systems and internal dashboards built around how you actually work."
+>
+    <section class="Hero">
+        <div class="container-fluid">
+            <ServiceHeroWrapper>
+                <div class="content space-y-4">
+                    <ServiceHeading title="Custom Software Development" />
+
+                    <ServiceParagraph description="Generic tools are fine until they aren't — until you're maintaining three spreadsheets to work around what the software can't do, or paying for twenty features you'll never use to get the one you need." />
+
+                    <ServiceParagraph description="We build custom systems around how your business actually operates: e-commerce platforms, point-of-sale systems, ERPs, dashboards, and internal tools that hold up under real, everyday use." />
+
+                    <ServiceActionButton href={AppConfig.whatsappScheduleCallCustomSoftwareService} text="Get Your Custom Software" />
+                </div>
+
+                <div class="relative">
+                    <div class="bg-green rounded-[45px] p-4 md:p-8 relative z-10">
+                    <img src={AppConfig.images.services.customSoftware.src} alt="Custom Software Services" class="w-full h-auto rounded-[35px]" />
+                    </div>
+                    <div class="absolute top-8 left-8 right-8 bottom-8 bg-dark rounded-[45px] -z-10"></div>
+                </div>
+            </ServiceHeroWrapper>
+        </div>
+    </section>
+
+    <section class="Features">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">What We Build</h2>
+
+            <div class="features-wrapper grid lg:grid-cols-4 gap-12">
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">E-commerce Platforms</p>
+                    <p class="description">Online stores that convert, not just display products</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.ecommercePlatforms.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">POS Systems</p>
+                    <p class="description">In-store or multi-branch POS with invoicing</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.posSystems.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">ERP & Management Systems</p>
+                    <p class="description">Manage your enterprise in one place instead of five disconnected tools</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.erpManagementSystems.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Booking & Scheduling Systems</p>
+                    <p class="description">For service businesses that need appointments and reservations</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.bookingSchedulingSystems.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Process" id="process">
+      <div class="container-fluid">
+        <h2 class="font-accent font-bold text-heading-text lg:text-l-text mb-4 lg:mb-8 text-center">Our Process</h2>
+
+        <div class="content">
+            <div class="process-steps grid lg:grid-cols-4 gap-8">
+                {processes.map((process, index) => (
+                    <div class="step space-y-2 p-4 border border-border rounded-lg">
+                        <p class="font-bold text-muted-foreground">{String(index + 1).padStart(2, '0')}</p>
+                        <p class="font-bold">{process.name}</p>
+                        <p>{process.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="FAQs">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="faqs-wrapper space-y-4 max-w-3xl mx-auto">
+                {faqs.map((faq) => (
+                    <div class="faq-item p-4">
+                        <h3 class="font-semibold text-lg">{faq.question}</h3>
+                        <p class="text-muted-foreground mt-2">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+</MainLayout>

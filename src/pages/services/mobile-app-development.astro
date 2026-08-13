@@ -1,0 +1,181 @@
+---
+import { AppConfig } from "@/data/app.config";
+import MainLayout from "@/layouts/MainLayout.astro";
+import ServiceHeroWrapper from "@/components/ui/services/ServiceHeroWrapper.astro";
+import ServiceHeading from "@/components/ui/services/ServiceHeading.astro";
+import ServiceParagraph from "@/components/ui/services/ServiceParagraph.astro";
+import ServiceActionButton from "@/components/ui/services/ServiceActionButton.astro";
+import FeaturesList from "@/components/ui/FeaturesList.astro";
+import FeaturesListItem from "@/components/ui/FeaturesListItem.astro";
+import CTA from "@/components/CTA.astro";
+
+const servicesFeatures = {
+    customerFacingApps: [
+        'Ordering',
+        'Service Booking',
+    ],
+    internalOperationApps: [
+        'Field service',
+        'Delivery',
+        'Inventory app'
+    ],
+    mvpApps: [
+        'E-commerce',
+        'Functional first versions',
+    ],
+};
+
+const faqs = [
+    {
+        question: "Should I build a native app or a cross-platform app?",
+        answer: "For most businesses, a cross-platform app (one codebase for iOS and Android) is faster to build and cheaper to maintain, without a noticeable difference in performance. We'll recommend the right approach during the discovery call based on your specific needs."
+    },
+    {
+        question: "Can you integrate M-Pesa into my app?",
+        answer: "Yes — M-Pesa STK Push and other payment integrations are a standard part of most apps we build for the Kenyan market."
+    },
+    {
+        question: "Do you handle submitting the app to the Google Play Store and Apple App Store?",
+        answer: "Yes, we support you through the submission process for both stores."
+    },
+    {
+        question: "Do I need a website too, or just an app?",
+        answer: "Depends on your business. We can advise on whether a website, an app, or both make sense for your goals — and we build both under one roof if you need it."
+    },
+    {
+        question: "How long does it take to build a mobile app?",
+        answer: "Timelines depend on scope, but most MVP or single-purpose apps take 3–6 weeks. We'll give you a firm timeline in the scoped proposal."
+    }
+];
+
+const processes = [
+  {
+    name: "Discovery Call",
+    description: "What the app needs to do, for whom, and what success looks like.",
+  },
+  {
+    name: "Scoped Proposal",
+    description: "Features, timeline, and pricing laid out clearly before we start.",
+  },
+  {
+    name: "Design Sprint",
+    description: "A clickable prototype of the app experience, approved before development begins.",
+  },
+  {
+    name: "Agile Build Sprints",
+    description: "Weekly builds you can install and test on your own device as we go.",
+  },
+  {
+    name: "QA & Launch",
+    description: "Tested across devices and OS versions, then submitted to app stores."
+  },
+  {
+    name: "Growth & Support",
+    description: "Post-launch monitoring, bug fixes, and a retainer option for new features."
+  }
+];
+---
+
+<MainLayout 
+  title="Mobile App Development Kenya | iOS & Android Apps | Alsuwa" 
+  description="Custom mobile app development for Kenyan businesses — iOS, Android and cross-platform apps with M-Pesa integration, built for real-world use."
+>
+    <section class="Hero">
+        <div class="container-fluid">
+            <ServiceHeroWrapper>
+                <div class="content space-y-4">
+                    <ServiceHeading title="Mobile App Development" />
+
+                    <ServiceParagraph description="An app is only worth building if people actually keep using it." />
+
+                    <ServiceParagraph description="We design and build mobile apps around a specific outcome — more orders, easier bookings, better retention — not just a checklist of screens. From customer-facing apps to internal tools your team uses daily, we build for the phones and networks your users actually have, which in Kenya means designing for real-world data speeds and Android-first usage from day one." />
+
+                    <ServiceActionButton href={AppConfig.whatsappScheduleCallMobileAppService} text="Get Your Custom App" />
+                </div>
+
+                <div class="relative">
+                    <div class="bg-green rounded-[45px] p-4 md:p-8 relative z-10">
+                    <img src={AppConfig.images.services.customSoftware.src} alt="Mobile App Development Service" class="w-full h-auto rounded-[35px]" />
+                    </div>
+                    <div class="absolute top-8 left-8 right-8 bottom-8 bg-dark rounded-[45px] -z-10"></div>
+                </div>
+            </ServiceHeroWrapper>
+        </div>
+    </section>
+
+    <section class="Features">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">What We Build</h2>
+
+            <div class="features-wrapper grid lg:grid-cols-3 gap-12">
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">customer Facing Apps</p>
+                    <p class="description">Built to convert and retain users</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.customerFacingApps.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">Internal & Operational Apps</p>
+                    <p class="description">Apps your team users to run the business day to day</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.internalOperationApps.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+
+                <div class="feature space-y-4 p-4 bg-highlight rounded-lg">
+                    <p class="title font-semibold">MVP Apps</p>
+                    <p class="description">A lean, functional first version to test you idea with real users</p>
+
+                    <FeaturesList>
+                        {servicesFeatures.mvpApps.map((feature) => (
+                            <FeaturesListItem feature={feature} />
+                        ))}
+                    </FeaturesList>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Process" id="process">
+      <div class="container-fluid">
+        <h2 class="font-accent font-bold text-heading-text lg:text-l-text mb-4 lg:mb-8 text-center">Our Process</h2>
+
+        <div class="content">
+            <div class="process-steps grid lg:grid-cols-3 gap-8">
+                {processes.map((process, index) => (
+                    <div class="step space-y-2 p-4 border border-border rounded-lg">
+                        <p class="font-bold text-muted-foreground">{String(index + 1).padStart(2, '0')}</p>
+                        <p class="font-bold">{process.name}</p>
+                        <p>{process.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="FAQs">
+        <div class="container-fluid">
+            <h2 class="font-bold text-heading-text lg:text-l-text text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="faqs-wrapper space-y-4 max-w-3xl mx-auto">
+                {faqs.map((faq) => (
+                    <div class="faq-item p-4">
+                        <h3 class="font-semibold text-lg">{faq.question}</h3>
+                        <p class="text-muted-foreground mt-2">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+</MainLayout>

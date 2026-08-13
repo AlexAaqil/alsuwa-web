@@ -5,34 +5,34 @@ import { MapPin, Phone, Mail } from "@lucide/astro";
 
 <section class="Location">
     <div class="container-fluid">
-        <div class="section-header">
-            <h2>Where We Make It Happen</h2>
+        <div class="section-header mb-4 lg:text-center">
+            <h2 class="font-bold text-heading-text lg:text-l-text">Where We Make It Happen</h2>
         </div>
 
         <div class="content">
-            <div class="location-wrapper">
-                <div class="image">
-                    <img src={AppConfig.images.general.ruiiKiambu.src} alt="Image of Ruii, Kiambu">
+            <div class="location-wrapper grid lg:grid-cols-12 gap-8 py-8">
+                <div class="image h-75 lg:col-span-4">
+                    <img src={AppConfig.images.general.ruiiKiambu.src} alt="Image of Ruii, Kiambu" class="rounded-lg object-center">
                 </div>
 
-                <div class="info">
-                    <p class="address">Kiambu, Kenya.</p>
+                <div class="info lg:col-span-8 lg:grid lg:grid-cols-12 lg:gap-8">
+                    <p class="address text-heading-text lg:col-span-4">Kiambu, Kenya.</p>
 
-                    <div class="location-details">
-                        <p>
-                            <span><MapPin /></span>
+                    <div class="location-details space-y-2 lg:col-span-8">
+                        <p class="flex gap-2 items-center">
+                            <MapPin class="w-4 h-4" />
                             <span>{AppConfig.exact_address}</span>
                         </p>
-                        <p>
-                            <span><Phone /></span>
+                        <p class="flex gap-2 items-center">
+                            <Phone class="w-4 h-4" />
                             <span>{AppConfig.phone}</span>
                         </p>
-                        <p>
-                            <span><Mail /></span>
+                        <p class="flex gap-2 items-center">
+                            <Mail class="w-4 h-4" />
                             <span>{AppConfig.email}</span>
                         </p>
 
-                        <div class="actions">
+                        <div class="actions grid lg:grid-cols-2 lg:items-center gap-8 mt-8">
                             <a href="" class="btn btn-outline">View Map</a>
                             <a href={AppConfig.whatsappScheduleCall} class="btn btn-outline">Get in touch</a>
                         </div>
