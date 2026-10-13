@@ -1,0 +1,25 @@
+---
+import { Video } from "@lucide/astro";
+import { AppConfig } from '../../data/app.config';
+import { getRouteUrl } from '../../data/routes.config';
+---
+
+<section class="Hero flex items-center justify-center lg:min-h-[85dvh]">
+    <div class="container-fluid">
+        <div class="hero-text space-y-8 md:text-center md:max-w-6xl md:mx-auto">
+            <div class="content space-y-8">
+                <h1 class="punchline text-heading-text font-bold font-accent lg:text-l-text lg:leading-15"><span class="text-accent">Custom Software</span>, Websites & Business Systems for Growing Businesses.</h1>
+                <p class="description md:text-heading-text md:w-[75%] md:mx-auto">We help businesses scale through custom software, e-commerce platforms, ERP Systems, management systems and visual design.</p>
+            </div>
+
+            <div class="hero-btns flex flex-col gap-4 md:flex-row md:gap-8 md:justify-center">
+                <a href={AppConfig.whatsappScheduleCall} rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" class="btn btn-primary flex items-center justify-center gap-1">
+                    <Video />
+                    <span>Schedule a call</span>
+                </a>
+
+                <a href={ getRouteUrl("contact-page") } class="btn btn-outline">Get in touch</a>
+            </div>
+        </div>
+    </div>
+</section>

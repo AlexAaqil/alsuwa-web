@@ -1,0 +1,212 @@
+import ruiiKiambu from '../assets/images/general/kiambu-ruii.webp';
+import image404 from '../assets/images/general/404.svg';
+
+import shea254Logo from '../assets/images/logos/shea254-logo.jpg';
+import alsuwaLogo from '../assets/images/logos/alsuwa-logo.svg';
+import youTubeLogo from '../assets/images/logos/youtube.svg';
+import faceBookLogo from '../assets/images/logos/facebook.svg';
+import instagramLogo from '../assets/images/logos/instagram.svg';
+import whatsAppLogo from '../assets/images/logos/whatsapp.svg';
+import tikTokLogo from '../assets/images/logos/tiktok.svg';
+
+import webDevelopment from '../assets/images/services/web-development.webp';
+import customSoftware from '../assets/images/services/custom-software.webp';
+import visualDesign from '../assets/images/services/visual-design.webp';
+import apiIntegration from '../assets/images/services/api-integration.webp';
+import mobileAppDevelopment from '../assets/images/services/mobile-app-development.webp';
+
+import shea254DemoImage from '../assets/images/projects/shea254.webp';
+
+export interface Client {
+    id: string;
+    name: string;
+    image: ImageMetadata;
+}
+
+export interface Service {
+    id: number;
+    label: string;
+    name: string;
+    slug: string;
+    description: string;
+    image: ImageMetadata;
+    tags: string[];
+}
+
+export interface Works {
+    id: number;
+    name: string;
+    slug: string;
+    description: string;
+    image: ImageMetadata;
+    tags: string[];
+}
+
+export const AppConfig = {
+    brand_name: "Alsuwa",
+    brand_tagline: "Custom Software Development & Business Automation in Kenya",
+    social_sharing_tagline: "Alsuwa helps businesses grow through custom software development, website development, ERP Systems, e-commerce platforms, business automation solutions and visual design in Kenya.",
+    address: "Kiambu, Kenya",
+    exact_address: "Ruii, Kiambu, Kenya",
+    email: "info@alsuwa.com",
+    time: "Mon - Fri: 09:00 AM - 05:00 PM",
+    phone: "+254 745 744 261",
+    whatsappScheduleCall: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call!",
+    whatsappScheduleCallWebsiteDevelopmentService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20website%20development%20service!",
+    whatsappScheduleCallSEOService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20SEO%20service!",
+    whatsappScheduleCallCustomSoftwareService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20Custom%20Software%20service!",
+    whatsappScheduleCallAPIIntegrationService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20API%20Integration%20service!",
+    whatsappScheduleCallMobileAppService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20Mobile%20App%20service!",
+    whatsappScheduleCallVisualDesignService: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20Visual%20Design%20service!",
+    whatsappScheduleCallEssentialsPackage: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20essentials%20package!",
+    whatsappScheduleCallGrowthPackage: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20growth%20package!",
+    whatsappScheduleCallEnterprisePackage: "https://wa.me/254745744261?text=Hi%20Alsuwa!%20I'd%20like%20to%20schedule%20a%20call%20about%20the%20enterprise%20package!",
+    instagram: "https://instagram.com/alsuwahq",
+    facebook: "https://www.facebook.com/people/Alsuwahq/61591579591758/",
+    tiktok: "https://www.tiktok.com/@alsuwahq",
+    youtube: "https://youtube.com/@alsuwahq",
+
+    currentYear: new Date().getFullYear(),
+
+    images: {
+        services: {
+            webDevelopment,
+            customSoftware,
+            visualDesign,
+            apiIntegration,
+            mobileAppDevelopment,
+        },
+        logos: {
+            shea254Logo,
+            alsuwaLogo,
+            youTubeLogo,
+            instagramLogo,
+            faceBookLogo,
+            tikTokLogo,
+            whatsAppLogo,
+        },
+        general: {
+            ruiiKiambu,
+            image404,
+        }
+    },
+
+    stats: {
+        projects: '30+',
+        years_of_experience: '4+',
+        client_satisfaction: '99%',
+        client_ROI: '3X',
+    },
+
+    services: [
+        {
+            name: 'Web Development',
+            slug: 'web-development',
+            description: 'Websites should be your conversion engines, not just look good on a portfolio.',
+            image: webDevelopment,
+            tags: ['Web Development', 'Web Design', 'SEO'],
+            is_featured: true,
+        },
+        {
+            name: 'Custom Software',
+            slug: 'custom-software',
+            description: 'Ecommerce, management systems, dashboards and internal tools that hold up under real conditions.',
+            image: customSoftware,
+            tags: ['Ecommerce', 'Dashboards', 'Management Systems'],
+            is_featured: true,
+        },
+        {
+            name: 'Visual Design',
+            slug: 'visual-design',
+            description: 'Beautiful and functional designs that enhance user experience and drive engagement.',
+            image: visualDesign,
+            tags: ['Brand Identity', 'Brand Strategy', 'Brand Presentation'],
+            is_featured: true,
+        },
+        {
+            name: 'API Integration',
+            slug: 'api-integration',
+            description: 'Custom APIs and third-party integrations to seemlessly integrate with systems you rely on.',
+            image: apiIntegration,
+            tags: ['Payment Gateways (STK Push, Paypal, Stripe)', 'Custom APIs'],
+            is_featured: true,
+        },
+        {
+            name: 'SEO',
+            slug: 'seo',
+            description: 'Boost your online visibility, improve search rankings and drive more organic traffic with our comprehensive SEO services.',
+            image: apiIntegration,
+            tags: ['Technical SEO', 'On-Page SEO', 'Off-Page SEO'],
+            is_featured: false,
+        },
+        {
+            name: 'Mobile App Development',
+            slug: 'mobile-app-development',
+            description: 'Custom mobile app development — iOS, Android and cross-platform apps.',
+            image: apiIntegration,
+            tags: ['Androind', 'iOS', 'Cross Platform'],
+            is_featured: false,
+        },
+    ],
+
+    processes: [
+        {
+            id: 1,
+            label: '01',
+            name: 'Discovery Call',
+            description: "A deep dive focused 15-minute conversation to dive into your goals, users and constraints so we build the right thing, not just anything.",
+        },
+        {
+            id: 2,
+            label: '02',
+            name: 'Scoped Proposal',
+            description: "Clearly written document: deliverables, timeline, pricing — no vague estimates. You know exactly what you're signing before any money moves.",
+        },
+        {
+            id: 3,
+            label: '03',
+            name: 'Design Sprints',
+            description: "Clickable prototypes before building anything. You approve the experience. What you see is what gets built.",
+        },
+        {
+            id: 4,
+            label: '04',
+            name: 'Agile Build Sprints',
+            description: "Weekly demos and transparent progress tracking. No black boxes, no empty promises for six weeks.",
+        },
+        {
+            id: 5,
+            label: '05',
+            name: 'QA & Launch',
+            description: "Tested across devices, browsers, and load scenarios. We release in stages so launch day is quiet — which means everything worked.",
+        },
+        {
+            id: 6,
+            label: '06',
+            name: 'Growth & Support',
+            description: "Post-launch support, monitoring, perfomance tuning and a retainer option for ongoing features. We're not a project shop — we become part of your team.",
+        },
+    ],
+
+    works: [
+        {
+            id: 1,
+            name: 'Shea254',
+            slug: 'shea254',
+            description: 'For a natural beauty brand, we implemented a full e-commerce platform that resulted in increased user engagement by 20% and increase in sales by 30%.',
+            image: shea254DemoImage,
+            tags: ['Company Website', 'Ecommerce'],
+        }
+    ],
+
+    clients: [
+        {
+            name: 'shea254',
+            image: shea254Logo,
+        },
+        {
+            name: 'Alsuwa',
+            image: alsuwaLogo,
+        }
+    ]
+} as const;

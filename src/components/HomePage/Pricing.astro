@@ -1,0 +1,60 @@
+---
+import { AppConfig } from "../../data/app.config";
+import SectionTitle from "../../components/ui/SectionTitle.astro";
+import { pricingPlans } from "../../data/pricing.config";
+import FeaturesList from "../../components/ui/FeaturesList.astro";
+import FeaturesListItem from "../../components/ui/FeaturesListItem.astro";
+---
+
+<section class="Pricing">
+    <div class="container-fluid">
+        <SectionTitle 
+            title="Flexible Pricing Models"
+            description="No surprise invoices. No scope creep. Just honest pricing for the work you need."
+        />
+
+        <div class="content">
+            <div class="pricing-cards grid lg:grid-cols-3 gap-8">
+                {pricingPlans.map((plan) => (
+                    <div class="pricing p-4 bg-highlight rounded-lg space-y-4 flex flex-col">
+                        <div class="flex items-center justify-between">
+                            <p class="package text-heading-text font-bold">
+                                {plan.name}
+                            </p>
+                            {plan.badge && (
+                                <span class="text-xs bg-accent text-accent-foreground px-3 py-1 rounded-full">
+                                    {plan.badge}
+                                </span>
+                            )}
+                        </div>
+                        
+                        <p class="price text-heading-text grid gap-0.5">
+                            <span class="text-body-label-text">From</span>
+                            <span class="font-bold flex items-baseline gap-1">
+                                {plan.starting_price} 
+                                <span class="text-body-label-text text-muted-foreground font-normal">
+                                    {plan.payment_model}
+                                </span>
+                            </span>
+                        </p>
+                        
+                        <p class="description">{plan.description}</p>
+
+                        <FeaturesList class="flex-1">
+                            {plan.features.map((feature) => (
+                                <FeaturesListItem feature={feature} />
+                            ))}
+                        </FeaturesList>
+
+                        <a 
+                            href={plan.action.url} 
+                            class="action inline-block bg-accent text-accent-foreground py-4 text-center w-full rounded-sm hover:opacity-90 transition-opacity"
+                        >
+                            {plan.action.text}
+                        </a>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

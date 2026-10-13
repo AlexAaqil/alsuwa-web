@@ -1,0 +1,25 @@
+.container-fluid {
+    @apply py-4 px-[4%];
+}
+
+.inline-link {
+    @apply text-secondary-accent;
+}
+
+section {
+    &:not(:last-of-type) {
+        @apply mb-15;
+    }
+
+    &:last-of-type {
+        @apply pb-15;
+    }
+}
+
+@import './components/index';
+
+/* *,
+*::before,
+*::after {
+    outline: 1px solid rgb(253, 233, 233);
+} */

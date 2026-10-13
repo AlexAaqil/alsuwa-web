@@ -1,0 +1,11 @@
+---
+export interface Props {
+    class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<ul class={`list-none list-inside space-y-2 ${className}`}>
+    <slot />
+</ul>

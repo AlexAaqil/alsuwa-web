@@ -1,0 +1,10 @@
+---
+const { href, children } = Astro.props;
+const isActive = Astro.url.pathname === href;
+---
+
+<a 
+    href={href}
+    class={`navbar__link font-medium hover:text-accent transition-opacity lg:text-foreground ${isActive ? 'active' : ''}`}>
+  <slot />
+</a>
